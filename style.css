@@ -1,0 +1,412 @@
+/* ========================================================
+   RAGHU KETHU PEYARCHI LANDING PAGE
+   Theme: Radiant Temple Saffron, Golden Amber, Deep Maroon & Crimson
+   CRITICAL: No black or dark charcoal backgrounds!
+   ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Rozha+One&display=swap');
+
+:root {
+  --primary-saffron: #FF8F00;
+  --primary-deep-saffron: #E65100;
+  --golden-yellow: #FFB703;
+  --bright-gold: #FFD700;
+  --warm-peach: #FFE5B4;
+  --radiant-amber: #F59E0B;
+  
+  /* Text Colors - Deep Maroon & Dark Brown for crisp readability */
+  --text-maroon: #3A0E00;
+  --text-darkbrown: #331500;
+  --text-chocolate: #4A1E05;
+  --text-muted: #6B3410;
+  --text-light-maroon: #853A10;
+
+  /* Accents */
+  --crimson-red: #C41E3A;
+  --crimson-deep: #A31229;
+  --crimson-glow: rgba(196, 30, 58, 0.35);
+  --gold-glow: rgba(255, 215, 0, 0.45);
+
+  /* Containers & Cards: Warm white & frosted glass */
+  --card-bg-solid: #FFFDF5;
+  --card-bg-glass: rgba(255, 253, 245, 0.94);
+  --card-border: rgba(217, 119, 6, 0.28);
+  --card-border-gold: rgba(245, 158, 11, 0.55);
+  --card-shadow: 0 12px 36px -8px rgba(180, 83, 9, 0.18), 0 4px 12px rgba(180, 83, 9, 0.08);
+  --card-shadow-hover: 0 20px 45px -10px rgba(180, 83, 9, 0.28), 0 8px 20px rgba(180, 83, 9, 0.12);
+
+  /* Radiant Warm Gradient Background */
+  --body-bg-gradient: linear-gradient(145deg, #FF9933 0%, #FFB703 28%, #FFCC00 65%, #FF7800 100%);
+  --hero-bg-gradient: radial-gradient(circle at 50% 20%, #FFE082 0%, #FFB703 45%, #FF8F00 100%);
+  
+  --font-serif: 'Cinzel', Georgia, serif;
+  --font-display: 'Rozha One', 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Reset & Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+section[id], footer[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--body-bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-darkbrown);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle sacred geometric overlay across page */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.22) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(255, 235, 150, 0.25) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C41E3A' fill-opacity='0.035'%3E%3Cpath d='M40 0l40 40-40 40-40-40z'/%3E%3Ccircle cx='40' cy='40' r='18' fill='none' stroke='%23C41E3A' stroke-width='1' stroke-opacity='0.05'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  color: var(--text-maroon);
+  letter-spacing: -0.01em;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Elegant Desktop Nav Link Styling */
+.main-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 0.825rem; /* ~13.2px */
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-darkbrown);
+  padding: 0.5rem 0.65rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  letter-spacing: 0.005em;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+@media (min-width: 1280px) {
+  .main-nav-link {
+    font-size: 0.875rem; /* 14px */
+    padding: 0.55rem 0.85rem;
+  }
+}
+
+.main-nav-link:hover {
+  color: var(--crimson-red);
+  background-color: rgba(254, 243, 199, 0.85); /* amber-100 */
+  transform: translateY(-1px);
+}
+
+.main-nav-link:active {
+  transform: translateY(0);
+}
+
+/* Radiant Gold Glow & Borders */
+.gold-border {
+  border: 1px solid var(--card-border-gold);
+}
+
+.gold-border-subtle {
+  border: 1px solid var(--card-border);
+}
+
+.glass-card {
+  background: var(--card-bg-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--card-border-gold);
+  border-radius: 1.25rem;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: rgba(245, 158, 11, 0.85);
+}
+
+.solid-warm-card {
+  background: var(--card-bg-solid);
+  border: 1px solid var(--card-border);
+  border-radius: 1.25rem;
+  box-shadow: var(--card-shadow);
+}
+
+/* Pulsating CTA Crimson Button */
+.btn-pulsing-crimson {
+  background: linear-gradient(135deg, #D62246 0%, #C41E3A 50%, #9E132B 100%);
+  color: #FFFDF5 !important;
+  font-weight: 700;
+  border: 1.5px solid #FFD700;
+  box-shadow: 0 0 0 0 rgba(196, 30, 58, 0.7), 0 8px 24px rgba(163, 18, 41, 0.35);
+  animation: pulse-crimson 2.2s infinite;
+  transition: all 0.25s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-pulsing-crimson:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 25px rgba(196, 30, 58, 0.8), 0 10px 28px rgba(163, 18, 41, 0.45);
+  background: linear-gradient(135deg, #E02850 0%, #D62246 50%, #B21B27 100%);
+}
+
+.btn-pulsing-crimson::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: rotate(25deg);
+  animation: sheen 3.5s infinite;
+}
+
+@keyframes pulse-crimson {
+  0% {
+    box-shadow: 0 0 0 0 rgba(196, 30, 58, 0.7), 0 8px 20px rgba(163, 18, 41, 0.35);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(196, 30, 58, 0), 0 8px 24px rgba(163, 18, 41, 0.35);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(196, 30, 58, 0), 0 8px 20px rgba(163, 18, 41, 0.35);
+  }
+}
+
+@keyframes sheen {
+  0% { left: -70%; }
+  30% { left: 140%; }
+  100% { left: 140%; }
+}
+
+/* Secondary Golden/Warm Ivory Button */
+.btn-warm-ivory {
+  background: #FFFDF5;
+  color: var(--text-maroon);
+  font-weight: 700;
+  border: 1.5px solid #D97706;
+  box-shadow: 0 4px 14px rgba(180, 83, 9, 0.15);
+  transition: all 0.25s ease;
+}
+
+.btn-warm-ivory:hover {
+  background: #FEF3C7;
+  color: var(--crimson-deep);
+  border-color: #B45309;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(180, 83, 9, 0.25);
+}
+
+/* Sacred Ribbon & Badges */
+.badge-temple-gold {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+  color: #78350F;
+  border: 1px solid #F59E0B;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.badge-crimson {
+  background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
+  color: #991B1B;
+  border: 1px solid #F87171;
+  font-weight: 700;
+}
+
+.badge-saffron {
+  background: linear-gradient(135deg, #FFEDD5 0%, #FED7AA 100%);
+  color: #9A3412;
+  border: 1px solid #FB923C;
+  font-weight: 700;
+}
+
+/* Countdown Card */
+.countdown-box {
+  background: linear-gradient(180deg, #FFFDF5 0%, #FEF3C7 100%);
+  border: 1.5px solid #F59E0B;
+  border-radius: 0.85rem;
+  padding: 0.75rem 1rem;
+  min-width: 70px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.12);
+}
+
+.countdown-number {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--crimson-deep);
+  line-height: 1.1;
+}
+
+.countdown-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Ornate Vedic Borders & Dividers */
+.vedic-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+}
+
+.vedic-divider::before,
+.vedic-divider::after {
+  content: '';
+  height: 2px;
+  width: 80px;
+  background: linear-gradient(90deg, transparent, #D97706, transparent);
+}
+
+/* Filter Tab Styles */
+.rasi-filter-btn {
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.925rem;
+  background: rgba(255, 253, 245, 0.8);
+  border: 1px solid rgba(217, 119, 6, 0.35);
+  color: var(--text-darkbrown);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rasi-filter-btn:hover {
+  background: #FFFDF5;
+  border-color: #D97706;
+  transform: translateY(-1px);
+}
+
+.rasi-filter-btn.active {
+  background: linear-gradient(135deg, #C41E3A 0%, #9E132B 100%);
+  color: #FFFDF5;
+  border-color: #FFD700;
+  box-shadow: 0 4px 14px rgba(163, 18, 41, 0.3);
+}
+
+/* Rasi Card Accents */
+.rasi-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rasi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #FF9933, #FFD700, #C41E3A);
+}
+
+/* Modal Backdrops & Dialogs */
+.modal-backdrop {
+  background: rgba(74, 30, 5, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Subtle Shimmer for High-Priority Offers */
+.shimmer-gold {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-gold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-20deg);
+  animation: shine-card 4s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes shine-card {
+  0% { left: -100%; }
+  30% { left: 150%; }
+  100% { left: 150%; }
+}
+
+/* Custom Scrollbar for warm feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFB703;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D97706;
+  border-radius: 5px;
+  border: 2px solid #FFB703;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C41E3A;
+}
+
+/* Audio Player Pulse */
+.audio-pulsing {
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
