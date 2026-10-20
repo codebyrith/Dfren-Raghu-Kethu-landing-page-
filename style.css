@@ -4,7 +4,7 @@
    CRITICAL: No black or dark charcoal backgrounds!
    ======================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Rozha+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap');
 
 :root {
   --primary-saffron: #FF8F00;
@@ -39,9 +39,9 @@
   --body-bg-gradient: linear-gradient(145deg, #FF9933 0%, #FFB703 28%, #FFCC00 65%, #FF7800 100%);
   --hero-bg-gradient: radial-gradient(circle at 50% 20%, #FFE082 0%, #FFB703 45%, #FF8F00 100%);
   
-  --font-serif: 'Cinzel', Georgia, serif;
-  --font-display: 'Rozha One', 'Cinzel', serif;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Reset & Global */
