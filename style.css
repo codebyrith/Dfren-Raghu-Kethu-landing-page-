@@ -4,7 +4,7 @@
    CRITICAL: No black or dark charcoal backgrounds!
    ======================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   --primary-saffron: #FF8F00;
@@ -39,8 +39,9 @@
   --body-bg-gradient: linear-gradient(145deg, #FF9933 0%, #FFB703 28%, #FFCC00 65%, #FF7800 100%);
   --hero-bg-gradient: radial-gradient(circle at 50% 20%, #FFE082 0%, #FFB703 45%, #FF8F00 100%);
   
-  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Montserrat', sans-serif;
   --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
@@ -94,14 +95,14 @@ body::before {
 }
 
 /* Typography Helpers */
-h1, h2, h3, h4, .font-serif {
-  font-family: var(--font-serif);
+h1, h2, h3, h4, .font-serif, .font-heading {
+  font-family: var(--font-heading) !important;
   color: var(--text-maroon);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .font-display {
-  font-family: var(--font-display);
+  font-family: var(--font-heading) !important;
 }
 
 /* Elegant Desktop Nav Link Styling */
