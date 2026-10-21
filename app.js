@@ -450,24 +450,14 @@ function handleBookingSubmit(event) {
   const name = document.getElementById("form-name")?.value || "";
   const phone = document.getElementById("form-phone")?.value || "";
   const dob = document.getElementById("form-dob")?.value || "";
-  const tob = document.getElementById("form-tob")?.value || "Not provided";
-  const pob = document.getElementById("form-pob")?.value || "";
-  const rasi = document.getElementById("form-rasi")?.value || "";
-  const questions = document.getElementById("form-questions")?.value || "";
-  const packageName = document.getElementById("modal-package-name")?.textContent || "Peyarchi Consultation";
 
   // Build WhatsApp pre-filled message URL
   const waText = encodeURIComponent(
     `*Rahu Ketu Peyarchi Consultation Booking*\n` +
     `• Name: ${name}\n` +
     `• Phone: ${phone}\n` +
-    `• Package: ${packageName.trim()}\n` +
-    `• DOB: ${dob}\n` +
-    `• TOB: ${tob}\n` +
-    `• POB: ${pob}\n` +
-    `• Rasi: ${rasi}\n` +
-    `• Query: ${questions}\n\n` +
-    `Please confirm my consultation slot with Dr. Kalpana Srikaanth.`
+    (dob ? `• Date of Birth: ${dob}\n` : '') +
+    `\nPlease confirm my consultation slot with Dr. Kalpana Srikaanth.`
   );
 
   const waBtn = document.getElementById("success-wa-btn");
@@ -483,6 +473,6 @@ function handleBookingSubmit(event) {
   if (form) form.classList.add("hidden");
   if (successBox) successBox.classList.remove("hidden");
   if (successMessage) {
-    successMessage.textContent = `Thank you, ${name}! Your consultation details for ${packageName.trim()} have been recorded. You can complete your booking via our official Razorpay gateway or connect with our coordinator directly on WhatsApp.`;
+    successMessage.textContent = `Thank you, ${name}! Your consultation request has been recorded. You can complete your booking via our official Razorpay gateway or connect with our coordinator directly on WhatsApp.`;
   }
 }
