@@ -1,51 +1,51 @@
 /* ========================================================
-   RAGHU KETHU PEYARCHI LANDING PAGE
-   Theme: Radiant Temple Saffron, Golden Amber, Deep Maroon & Crimson
-   CRITICAL: No black or dark charcoal backgrounds!
+   RAHU KETU PEYARCHI - HIGH CONVERTING VEDIC ASTROLOGY LANDING PAGE
+   Theme: Sacred Divine Orange, Radiant Saffron, Temple Amber & Gold
+   Reference Model: https://gemstones.kalpanasrikaanthastrologer.com/
    ======================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Outfit:wght@300;400;500;600;700;800&family=Mukta+Malar:wght@400;600;700;800&display=swap');
 
 :root {
-  --primary-saffron: #FF8F00;
-  --primary-deep-saffron: #E65100;
-  --golden-yellow: #FFB703;
-  --bright-gold: #FFD700;
-  --warm-peach: #FFE5B4;
-  --radiant-amber: #F59E0B;
+  /* Rich Orange & Sacred Saffron Theme Palette */
+  --orange-primary: #FF5E00;
+  --orange-deep: #E65100;
+  --orange-dark: #BF360C;
+  --orange-radiant: #FF7A00;
+  --orange-light: #FF9E40;
+  --orange-soft-bg: #FFF4EB;
+  --orange-cream: #FFF8F2;
   
-  /* Text Colors - Deep Maroon & Dark Brown for crisp readability */
-  --text-maroon: #3A0E00;
-  --text-darkbrown: #331500;
-  --text-chocolate: #4A1E05;
-  --text-muted: #6B3410;
-  --text-light-maroon: #853A10;
-
-  /* Accents */
-  --crimson-red: #C41E3A;
-  --crimson-deep: #A31229;
-  --crimson-glow: rgba(196, 30, 58, 0.35);
-  --gold-glow: rgba(255, 215, 0, 0.45);
-
-  /* Containers & Cards: Warm white & frosted glass */
-  --card-bg-solid: #FFFDF5;
-  --card-bg-glass: rgba(255, 253, 245, 0.94);
-  --card-border: rgba(217, 119, 6, 0.28);
-  --card-border-gold: rgba(245, 158, 11, 0.55);
-  --card-shadow: 0 12px 36px -8px rgba(180, 83, 9, 0.18), 0 4px 12px rgba(180, 83, 9, 0.08);
-  --card-shadow-hover: 0 20px 45px -10px rgba(180, 83, 9, 0.28), 0 8px 20px rgba(180, 83, 9, 0.12);
-
-  /* Radiant Warm Gradient Background */
-  --body-bg-gradient: linear-gradient(145deg, #FF9933 0%, #FFB703 28%, #FFCC00 65%, #FF7800 100%);
-  --hero-bg-gradient: radial-gradient(circle at 50% 20%, #FFE082 0%, #FFB703 45%, #FF8F00 100%);
+  --amber-gold: #FFB300;
+  --temple-gold: #FFC107;
+  --bright-gold: #FFD54F;
+  --gold-glow: rgba(255, 179, 0, 0.45);
   
-  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Montserrat', sans-serif;
-  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Text Colors - Deep rich brown & dark chocolate for crisp contrast against orange */
+  --text-dark: #2A1202;
+  --text-brown: #3D1C06;
+  --text-muted: #6E3B1B;
+  --text-light-brown: #8D5430;
+  --text-white: #FFFFFF;
+
+  /* Card Surfaces */
+  --card-glass: rgba(255, 252, 248, 0.95);
+  --card-glass-hover: #FFFFFF;
+  --card-border: rgba(230, 81, 0, 0.18);
+  --card-border-gold: rgba(255, 179, 0, 0.45);
+  --card-shadow: 0 10px 30px -5px rgba(191, 54, 12, 0.14), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 20px 40px -8px rgba(191, 54, 12, 0.25), 0 8px 16px rgba(0, 0, 0, 0.08);
+
+  /* Orange Backgrounds */
+  --bg-gradient: linear-gradient(135deg, #FF6600 0%, #FF8500 35%, #FFA000 70%, #FF6600 100%);
+  --bg-soft-gradient: linear-gradient(180deg, #FFF6EE 0%, #FFEEDB 100%);
+
+  --font-heading: 'Montserrat', sans-serif;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-tamil: 'Mukta Malar', 'Outfit', sans-serif;
 }
 
-/* Reset & Global */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -58,22 +58,18 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-section[id], footer[id] {
-  scroll-margin-top: 5.5rem;
-}
-
 body {
   font-family: var(--font-sans);
-  background: var(--body-bg-gradient);
+  background: var(--bg-gradient);
   background-attachment: fixed;
-  color: var(--text-darkbrown);
+  color: var(--text-dark);
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Subtle sacred geometric overlay across page */
+/* Sacred Geometric Watermark on Background */
 body::before {
   content: '';
   position: fixed;
@@ -82,9 +78,9 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.22) 0%, transparent 40%),
-    radial-gradient(circle at 85% 75%, rgba(255, 235, 150, 0.25) 0%, transparent 45%),
-    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C41E3A' fill-opacity='0.035'%3E%3Cpath d='M40 0l40 40-40 40-40-40z'/%3E%3Ccircle cx='40' cy='40' r='18' fill='none' stroke='%23C41E3A' stroke-width='1' stroke-opacity='0.05'/%3E%3C/g%3E%3C/svg%3E");
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(255, 220, 150, 0.25) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23B72C00' fill-opacity='0.035'%3E%3Cpath d='M30 0l30 30-30 30-30-30z'/%3E%3Ccircle cx='30' cy='30' r='12' fill='none' stroke='%23B72C00' stroke-width='1' stroke-opacity='0.04'/%3E%3C/g%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
 }
@@ -94,320 +90,399 @@ body::before {
   z-index: 1;
 }
 
-/* Typography Helpers */
-h1, h2, h3, h4, .font-serif, .font-heading {
+h1, h2, h3, h4, .font-heading {
   font-family: var(--font-heading) !important;
-  color: var(--text-maroon);
-  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  letter-spacing: -0.015em;
+  font-weight: 700;
 }
 
-.font-display {
-  font-family: var(--font-heading) !important;
+.tamil-text {
+  font-family: var(--font-tamil), sans-serif;
 }
 
-/* Elegant Desktop Nav Link Styling */
-.main-nav-link {
+/* ========================================================
+   HIGHLIGHTED CTA BUTTON - THE FOCAL POINT
+   Vibrant glowing orange/gold, subtle pulsing light effect
+   ======================================================== */
+.btn-highlighted-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-sans);
-  font-size: 0.825rem; /* ~13.2px */
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--text-darkbrown);
-  padding: 0.5rem 0.65rem;
-  border-radius: 0.5rem;
-  white-space: nowrap;
-  letter-spacing: 0.005em;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #FF4500 0%, #FF6A00 50%, #FF8C00 100%);
+  color: #FFFFFF !important;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  border: 2px solid #FFD54F;
+  box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7), 0 8px 24px rgba(230, 81, 0, 0.45);
+  cursor: pointer;
   text-decoration: none;
-}
-
-@media (min-width: 1280px) {
-  .main-nav-link {
-    font-size: 0.875rem; /* 14px */
-    padding: 0.55rem 0.85rem;
-  }
-}
-
-.main-nav-link:hover {
-  color: var(--crimson-red);
-  background-color: rgba(254, 243, 199, 0.85); /* amber-100 */
-  transform: translateY(-1px);
-}
-
-.main-nav-link:active {
-  transform: translateY(0);
-}
-
-/* Radiant Gold Glow & Borders */
-.gold-border {
-  border: 1px solid var(--card-border-gold);
-}
-
-.gold-border-subtle {
-  border: 1px solid var(--card-border);
-}
-
-.glass-card {
-  background: var(--card-bg-glass);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--card-border-gold);
-  border-radius: 1.25rem;
-  box-shadow: var(--card-shadow);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.glass-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--card-shadow-hover);
-  border-color: rgba(245, 158, 11, 0.85);
-}
-
-.solid-warm-card {
-  background: var(--card-bg-solid);
-  border: 1px solid var(--card-border);
-  border-radius: 1.25rem;
-  box-shadow: var(--card-shadow);
-}
-
-/* Pulsating CTA Crimson Button */
-.btn-pulsing-crimson {
-  background: linear-gradient(135deg, #D62246 0%, #C41E3A 50%, #9E132B 100%);
-  color: #FFFDF5 !important;
-  font-weight: 700;
-  border: 1.5px solid #FFD700;
-  box-shadow: 0 0 0 0 rgba(196, 30, 58, 0.7), 0 8px 24px rgba(163, 18, 41, 0.35);
-  animation: pulse-crimson 2.2s infinite;
-  transition: all 0.25s ease;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   position: relative;
   overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: pulse-orange 2.4s infinite;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.btn-pulsing-crimson:hover {
-  transform: scale(1.04);
-  box-shadow: 0 0 25px rgba(196, 30, 58, 0.8), 0 10px 28px rgba(163, 18, 41, 0.45);
-  background: linear-gradient(135deg, #E02850 0%, #D62246 50%, #B21B27 100%);
+.btn-highlighted-cta:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: linear-gradient(135deg, #FF5500 0%, #FF7700 50%, #FFA000 100%);
+  box-shadow: 0 0 30px rgba(255, 110, 0, 0.75), 0 12px 30px rgba(230, 81, 0, 0.55);
+  border-color: #FFFFFF;
 }
 
-.btn-pulsing-crimson::after {
+.btn-highlighted-cta:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.btn-highlighted-cta::after {
   content: '';
   position: absolute;
   top: -50%;
   left: -60%;
   width: 40%;
   height: 200%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
   transform: rotate(25deg);
-  animation: sheen 3.5s infinite;
+  animation: sheen-glow 3.5s infinite;
 }
 
-@keyframes pulse-crimson {
+@keyframes pulse-orange {
   0% {
-    box-shadow: 0 0 0 0 rgba(196, 30, 58, 0.7), 0 8px 20px rgba(163, 18, 41, 0.35);
+    box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7), 0 6px 20px rgba(230, 81, 0, 0.4);
   }
   70% {
-    box-shadow: 0 0 0 14px rgba(196, 30, 58, 0), 0 8px 24px rgba(163, 18, 41, 0.35);
+    box-shadow: 0 0 0 14px rgba(255, 69, 0, 0), 0 8px 24px rgba(230, 81, 0, 0.4);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(196, 30, 58, 0), 0 8px 20px rgba(163, 18, 41, 0.35);
+    box-shadow: 0 0 0 0 rgba(255, 69, 0, 0), 0 6px 20px rgba(230, 81, 0, 0.4);
   }
 }
 
-@keyframes sheen {
+@keyframes sheen-glow {
   0% { left: -70%; }
-  30% { left: 140%; }
+  25% { left: 140%; }
   100% { left: 140%; }
 }
 
-/* Secondary Golden/Warm Ivory Button */
-.btn-warm-ivory {
-  background: #FFFDF5;
-  color: var(--text-maroon);
+/* Secondary Button */
+.btn-orange-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  color: var(--orange-deep) !important;
+  font-family: var(--font-heading);
   font-weight: 700;
-  border: 1.5px solid #D97706;
-  box-shadow: 0 4px 14px rgba(180, 83, 9, 0.15);
+  font-size: 0.95rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 2px solid var(--orange-primary);
+  box-shadow: 0 4px 14px rgba(230, 81, 0, 0.15);
+  cursor: pointer;
+  text-decoration: none;
   transition: all 0.25s ease;
 }
 
-.btn-warm-ivory:hover {
-  background: #FEF3C7;
-  color: var(--crimson-deep);
-  border-color: #B45309;
+.btn-orange-outline:hover {
+  background: var(--orange-soft-bg);
+  color: var(--orange-dark) !important;
+  border-color: var(--orange-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(180, 83, 9, 0.25);
+  box-shadow: 0 6px 20px rgba(230, 81, 0, 0.25);
 }
 
-/* Sacred Ribbon & Badges */
-.badge-temple-gold {
-  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
-  color: #78350F;
-  border: 1px solid #F59E0B;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+/* ========================================================
+   CARD STYLES (Matching Reference Site Glass & Soft Aesthetic)
+   ======================================================== */
+.landing-card {
+  background: var(--card-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border-gold);
+  border-radius: 1.25rem;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.badge-crimson {
-  background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
-  color: #991B1B;
-  border: 1px solid #F87171;
-  font-weight: 700;
+.landing-card:hover {
+  background: var(--card-glass-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--orange-primary);
 }
 
-.badge-saffron {
-  background: linear-gradient(135deg, #FFEDD5 0%, #FED7AA 100%);
-  color: #9A3412;
-  border: 1px solid #FB923C;
-  font-weight: 700;
+/* 6-Card Feature Pill (Exact match to reference site right-side hero cards) */
+.stat-feature-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 246, 235, 0.92) 100%);
+  border: 1px solid rgba(255, 179, 0, 0.4);
+  border-radius: 1.1rem;
+  padding: 1.15rem 1.4rem;
+  box-shadow: 0 8px 24px -4px rgba(230, 81, 0, 0.12);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Countdown Card */
-.countdown-box {
-  background: linear-gradient(180deg, #FFFDF5 0%, #FEF3C7 100%);
-  border: 1.5px solid #F59E0B;
-  border-radius: 0.85rem;
-  padding: 0.75rem 1rem;
-  min-width: 70px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.12);
+.stat-feature-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  border-color: var(--orange-primary);
+  box-shadow: 0 12px 28px -4px rgba(230, 81, 0, 0.22);
 }
 
-.countdown-number {
-  font-family: var(--font-serif);
-  font-size: 1.85rem;
-  font-weight: 800;
-  color: var(--crimson-deep);
-  line-height: 1.1;
+.stat-feature-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #FF9100 0%, #FF3D00 100%);
+  border-radius: 4px 0 0 4px;
 }
 
-.countdown-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+/* Section Feature Card (Section 2 - 3 Left, Photo Center, 3 Right) */
+.section2-feature-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 160, 0, 0.35);
+  border-radius: 1.15rem;
+  padding: 1.4rem;
+  box-shadow: 0 6px 20px rgba(191, 54, 12, 0.08);
+  transition: all 0.25s ease;
 }
 
-/* Ornate Vedic Borders & Dividers */
-.vedic-divider {
+.section2-feature-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--orange-primary);
+  box-shadow: 0 12px 26px rgba(191, 54, 12, 0.18);
+  background: #FFFFFF;
+}
+
+/* Video Showcase Card */
+.video-media-card {
+  background: #FFFFFF;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 160, 0, 0.35);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.video-media-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--orange-primary);
+  box-shadow: 0 18px 36px rgba(230, 81, 0, 0.22);
+}
+
+/* Google Review Card (Matching reference site) */
+.google-review-card {
+  background: #FFFFFF;
+  border-radius: 1.15rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+}
+
+.google-review-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 160, 0, 0.6);
+  box-shadow: 0 10px 25px rgba(230, 81, 0, 0.14);
+}
+
+/* Media Logo Container */
+.media-logo-wrapper {
+  background: #FFFFFF;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin: 1.5rem auto;
+  border: 1px solid rgba(255, 179, 0, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  height: 80px;
 }
 
-.vedic-divider::before,
-.vedic-divider::after {
-  content: '';
-  height: 2px;
-  width: 80px;
-  background: linear-gradient(90deg, transparent, #D97706, transparent);
+.media-logo-wrapper:hover {
+  transform: translateY(-3px) scale(1.05);
+  border-color: var(--orange-primary);
+  box-shadow: 0 8px 20px rgba(230, 81, 0, 0.18);
 }
 
-/* Filter Tab Styles */
-.rasi-filter-btn {
-  padding: 0.6rem 1.25rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  font-size: 0.925rem;
-  background: rgba(255, 253, 245, 0.8);
-  border: 1px solid rgba(217, 119, 6, 0.35);
-  color: var(--text-darkbrown);
-  cursor: pointer;
-  transition: all 0.2s ease;
+.media-logo-wrapper img {
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
 }
 
-.rasi-filter-btn:hover {
-  background: #FFFDF5;
-  border-color: #D97706;
-  transform: translateY(-1px);
-}
-
-.rasi-filter-btn.active {
-  background: linear-gradient(135deg, #C41E3A 0%, #9E132B 100%);
-  color: #FFFDF5;
-  border-color: #FFD700;
-  box-shadow: 0 4px 14px rgba(163, 18, 41, 0.3);
-}
-
-/* Rasi Card Accents */
-.rasi-card {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.rasi-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
+/* Sticky Bottom Bar (Exact match to reference site) */
+.sticky-bottom-bar {
+  position: fixed;
+  bottom: 0;
   left: 0;
   right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, #FF9933, #FFD700, #C41E3A);
+  z-index: 50;
+  background: linear-gradient(90deg, rgba(42, 18, 2, 0.94) 0%, rgba(61, 28, 6, 0.95) 50%, rgba(42, 18, 2, 0.94) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1.5px solid rgba(255, 179, 0, 0.45);
+  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.25);
+  padding: 0.85rem 1.5rem;
+  transition: transform 0.3s ease;
 }
 
-/* Modal Backdrops & Dialogs */
-.modal-backdrop {
-  background: rgba(74, 30, 5, 0.65);
+/* Floating WhatsApp Button (Matching reference site) */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 5.5rem;
+  right: 1.5rem;
+  z-index: 55;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1) rotate(6deg);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.7);
+}
+
+/* Rasi Selector Pills */
+.rasi-pill-btn {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(255, 160, 0, 0.35);
+  color: var(--text-dark);
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.rasi-pill-btn:hover {
+  background: #FFFFFF;
+  border-color: var(--orange-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 81, 0, 0.15);
+}
+
+.rasi-pill-btn.active {
+  background: linear-gradient(135deg, #FF6A00 0%, #FF8C00 100%);
+  color: #FFFFFF !important;
+  border-color: #FFD54F;
+  box-shadow: 0 4px 16px rgba(255, 106, 0, 0.4);
+}
+
+/* FAQ Accordion */
+.faq-item {
+  background: #FFFFFF;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 160, 0, 0.25);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+
+.faq-item:hover {
+  border-color: var(--orange-primary);
+}
+
+.faq-button {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+}
+
+.faq-content {
+  padding: 0 1.5rem 1.25rem 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Modal Backdrop & Container */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 10, 2, 0.75);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-}
-
-/* Subtle Shimmer for High-Priority Offers */
-.shimmer-gold {
-  position: relative;
-  overflow: hidden;
-}
-
-.shimmer-gold::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transform: skewX(-20deg);
-  animation: shine-card 4s infinite ease-in-out;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
   pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
-@keyframes shine-card {
-  0% { left: -100%; }
-  30% { left: 150%; }
-  100% { left: 150%; }
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-/* Custom Scrollbar for warm feel */
+.modal-box {
+  background: #FFFFFF;
+  border-radius: 1.5rem;
+  border: 2px solid #FFD54F;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-box {
+  transform: scale(1);
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #FFB703;
+  background: #FFF4EB;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #D97706;
-  border-radius: 5px;
-  border: 2px solid #FFB703;
+  background: #FF9E40;
+  border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #C41E3A;
-}
-
-/* Audio Player Pulse */
-.audio-pulsing {
-  animation: pulse-ring 2s infinite;
-}
-
-@keyframes pulse-ring {
-  0% { transform: scale(0.95); opacity: 0.8; }
-  50% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(0.95); opacity: 0.8; }
+  background: #FF6600;
 }

@@ -1,874 +1,488 @@
 /**
- * Raghu Kethu Peyarchi Landing Page Logic
- * Interactive 12 Rasi Palan, Booking Modal, Gemstone Finder & Countdown
+ * Rahu Ketu Peyarchi 2026 - Interactive Landing Page Logic
+ * Features: 12 Rasi Transit Impact Navigator, Booking Modal, FAQ Accordion, WhatsApp & Razorpay Links
  */
 
-// 12 Zodiac Data for Raghu-Kethu Transit 2026-2027
+// 12 Zodiac Data for Rahu-Ketu Transit 2026
 const rasiData = [
   {
     id: "mesham",
     name: "Mesham (Aries)",
     tamilName: "மேஷம்",
-    element: "fire",
     symbol: "♈",
-    iconName: "Flame",
-    rahuHouse: "11th House (Labha Sthanam)",
-    ketuHouse: "5th House (Poorva Punya)",
-    rating: "9.0 / 10",
-    statusBadge: "Highly Auspicious",
-    statusClass: "badge-temple-gold",
-    summary: "Tremendous financial elevation, sudden career advancements, and expansion of influential social circles. Speculative investments require balanced discernment.",
-    career: "Outstanding breakthroughs, executive promotions, and long-awaited recognition from senior leadership or overseas clients.",
-    finance: "Abundant wealth inflow through multiple sources. Sudden windfall gains or ancestral property resolutions.",
-    health: "Vitality is robust. Keep stress in check through regular meditation and mindful eating.",
-    family: "Children's academic progress will bring joy. Singles may find auspicious matrimonial alliances after May.",
-    remedy: "Worship Goddess Durga on Tuesdays. Chant 'Om Durgayei Namaha' 108 times. Sponsor sesame oil lamps at Navagraha shrine.",
-    gemstone: "Natural Honey-Cinnamon Hessonite (Gomed) or Red Coral for Mars lord harmony."
+    rahuHouse: "11th House (Labha Sthanam - Aquarius)",
+    ketuHouse: "5th House (Poorva Punya - Leo)",
+    rating: "9.2 / 10",
+    statusBadge: "Highly Auspicious (மகா யோகம்)",
+    statusColor: "bg-green-100 text-green-800 border-green-300",
+    summary: "Tremendous financial elevation, sudden windfall gains, executive career advancements, and expansion of influential social circles.",
+    career: "Breakthrough promotions, senior leadership opportunities, and recognition from overseas clients or governing bodies.",
+    finance: "Abundant wealth inflow through multiple sources. Lucrative business expansion and settlement of old debts.",
+    health: "High vitality and stamina. Practice mindful stress release to balance busy schedules.",
+    family: "Children's academic and career accomplishments bring immense pride. Auspicious family ceremonies.",
+    pariharam: "Worship Goddess Durga on Tuesdays during Rahu Kalam with lemon lamps. Chant 'Om Durgayei Namaha' 108 times.",
+    gemstone: "Natural Hessonite (Gomed) or Red Coral setting for Mars-Rahu harmony."
   },
   {
     id: "rishabam",
     name: "Rishabam (Taurus)",
     tamilName: "ரிஷபம்",
-    element: "earth",
     symbol: "♉",
-    iconName: "Mountain",
-    rahuHouse: "10th House (Karma Sthanam)",
-    ketuHouse: "4th House (Sukha Sthanam)",
-    rating: "8.2 / 10",
-    statusBadge: "Favorable with Care",
-    statusClass: "badge-saffron",
-    summary: "Significant career expansion and potential relocation or foreign project assignments. Pay dedicated attention to home harmony and mother's health.",
-    career: "Bold career leaps, new entrepreneurial ventures, and shifts into tech or international domains.",
-    finance: "Expenditure on property renovation, vehicle purchase, or home upgrades. Steady business revenues.",
-    health: "Pay attention to digestive rhythm and chest health. Practice pranayama daily.",
-    family: "Occasional misunderstandings at home require calm diplomacy. Respect elder family members' advice.",
-    remedy: "Offer milk abhishekam to Lord Shiva on Pradosham days. Visit Thirunageswaram Temple for Lord Raghu archana.",
-    gemstone: "Certified White Zircon or Diamond, paired with Kethu-soothing Vaidooryam (Cat's Eye) pendant."
+    rahuHouse: "10th House (Karma Sthanam - Aquarius)",
+    ketuHouse: "4th House (Sukha Sthanam - Leo)",
+    rating: "8.3 / 10",
+    statusBadge: "Favorable Career Leap (தொழில் முன்னேற்றம்)",
+    statusColor: "bg-amber-100 text-amber-800 border-amber-300",
+    summary: "Significant career expansion, foreign projects, and elevated professional status. Balance work with home harmony.",
+    career: "New job offers, elevation to managerial posts, or venture expansion into technology and international trade.",
+    finance: "Steady growth in earnings. Wise investments in real estate and capital assets.",
+    health: "Maintain routine physical exercise and balanced diet to nurture digestive health.",
+    family: "Dedicate time to maternal well-being and domestic comfort. Cultivate calm communication.",
+    pariharam: "Perform milk abhishekam to Lord Shiva on Pradosham days. Visit Thirunageswaram Temple for Rahu archana.",
+    gemstone: "Certified White Zircon or Diamond, paired with Ketu-harmonizing Cat's Eye pendant."
   },
   {
     id: "mithunam",
     name: "Mithunam (Gemini)",
     tamilName: "மிதுனம்",
-    element: "air",
     symbol: "♊",
-    iconName: "Wind",
-    rahuHouse: "9th House (Bhagya Sthanam)",
-    ketuHouse: "3rd House (Dhairya Sthanam)",
-    rating: "8.7 / 10",
-    statusBadge: "Auspicious Fortune",
-    statusClass: "badge-temple-gold",
-    summary: "Remarkable valor, long-distance spiritual journeys, higher education opportunities, and divine mentor guidance.",
-    career: "Overseas opportunities, university admissions, and publishing/media breakthroughs.",
-    finance: "Long-term investments yield fruitful returns. Paternal inheritance or trust funds materialize.",
-    health: "High stamina and mental agility. Watch out for shoulder and throat strain during seasonal shifts.",
-    family: "Supportive younger siblings. Auspicious family ceremonies and pilgrimage tours.",
-    remedy: "Chant Vishnu Sahasranamam on Wednesdays. Feed green fodder to cows at your local goshala.",
+    rahuHouse: "9th House (Bhagya Sthanam - Aquarius)",
+    ketuHouse: "3rd House (Dhairya Sthanam - Leo)",
+    rating: "8.8 / 10",
+    statusBadge: "Divine Fortune & Courage (பாக்கிய யோகம்)",
+    statusColor: "bg-green-100 text-green-800 border-green-300",
+    summary: "Remarkable valor, long-distance pilgrimages, foreign travels, and divine mentor guidance unlocking long-delayed fortune.",
+    career: "Overseas employment opportunities, university admissions, and breakthroughs in digital media or consulting.",
+    finance: "Ancestral property settlements and rewarding returns from long-term ventures.",
+    health: "Robust stamina and sharp mental focus. Stay hydrated during travels.",
+    family: "Supportive younger siblings and heartwarming family reunions during pilgrimage visits.",
+    pariharam: "Chant Vishnu Sahasranamam on Wednesdays. Feed green gram fodder to cows at your local goshala.",
     gemstone: "Natural Emerald (Panna) alongside an energised 5-Mukhi Rudraksha."
   },
   {
     id: "kadagam",
     name: "Kadagam (Cancer)",
     tamilName: "கடகம்",
-    element: "water",
     symbol: "♋",
-    iconName: "Droplets",
-    rahuHouse: "8th House (Ayur Sthanam)",
-    ketuHouse: "2nd House (Dhana/Vak Sthanam)",
-    rating: "7.2 / 10",
-    statusBadge: "Caution & Remedies Needed",
-    statusClass: "badge-crimson",
-    summary: "A transformative spiritual phase. Practice disciplined financial management, avoid speculative trading, and speak with compassionate moderation.",
-    career: "Research, occult studies, IT forensics, and auditing fields thrive. Avoid hasty workplace conflicts.",
-    finance: "Guarded financial approach recommended. Lock emergency funds; avoid lending money to acquaintances.",
-    health: "Take care of eye health, teeth, and emotional equilibrium. Hydrate well and maintain satvic diet.",
-    family: "Choose words cautiously during domestic discussions to prevent unnecessary friction.",
-    remedy: "Chant Maha Mrityunjaya Mantra 108 times daily. Perform Raghu-Kethu Shanti Puja at Keezhperumpallam.",
-    gemstone: "Natural Pearl (Moti) set in pure silver ring on the little finger."
+    rahuHouse: "8th House (Ayur Sthanam - Aquarius)",
+    ketuHouse: "2nd House (Dhana & Vak Sthanam - Leo)",
+    rating: "7.3 / 10",
+    statusBadge: "Caution & Remedies Needed (பரிகார ராசி)",
+    statusColor: "bg-orange-100 text-orange-800 border-orange-300",
+    summary: "Deep spiritual transformation. Exercise disciplined financial prudence, avoid speculative risks, and practice soft speech.",
+    career: "Steady work routine is advised. Avoid hasty job resignations without confirmed offers.",
+    finance: "Prioritize emergency savings, curb impulsive luxury spending, and maintain clear accounting.",
+    health: "Prioritize sleep hygiene, seasonal wellness, and gentle yoga to maintain emotional balance.",
+    family: "Foster mutual trust in marital relationships. Avoid heated arguments over family finances.",
+    pariharam: "Visit Keezhaperumpallam temple to perform Ketu archana. Light sesame oil lamps on Saturdays for Lord Bhairava.",
+    gemstone: "Natural Pearl (Muthu) or Moonstone set in pure silver ring."
   },
   {
-    id: "simmam",
-    name: "Simmam (Leo)",
+    id: "simham",
+    name: "Simham (Leo)",
     tamilName: "சிம்மம்",
-    element: "fire",
     symbol: "♌",
-    iconName: "Flame",
-    rahuHouse: "7th House (Kalathra Sthanam)",
-    ketuHouse: "1st House (Janma Sthanam)",
+    rahuHouse: "7th House (Kalathra Sthanam - Aquarius)",
+    ketuHouse: "1st House (Janma Sthanam - Leo)",
     rating: "7.6 / 10",
-    statusBadge: "Transformative Growth",
-    statusClass: "badge-saffron",
-    summary: "Major soul growth, re-evaluating core identities, public partnerships, and business collaborations. Spousal understanding flourishes through empathy.",
-    career: "New partnerships, international joint ventures, and public-facing consultancy agreements.",
-    finance: "Good commercial earnings, but review contractual fine print before signing major deals.",
-    health: "Manage headache and blood pressure through yoga, surya namaskar, and adequate rest.",
-    family: "Deepen marital bonding through shared spiritual retreats and transparent communication.",
-    remedy: "Perform Aditya Hridaya Stotram at sunrise. Offer red hibiscus flowers to Lord Surya.",
-    gemstone: "Natural Ruby (Manikyam) or high-grade Hessonite Garnet after birth chart verification."
+    statusBadge: "Spiritual Awakening & Focus (சுய விழிப்புணர்வு)",
+    statusColor: "bg-amber-100 text-amber-800 border-amber-300",
+    summary: "Ketu in Janma inspires detachment and spiritual insight, while Rahu in 7th brings dynamic partnerships and business contracts.",
+    career: "Collaborative business contracts flourish. Choose business partners with verified credentials.",
+    finance: "Gains through spouse or overseas business partnerships. Keep clear legal agreements.",
+    health: "Practice meditation to stay calm and grounded. Avoid physical over-exhaustion.",
+    family: "Give ample patience and affection to life partner. Matrimonial discussions require calm understanding.",
+    pariharam: "Chant Aditya Hrudayam daily at sunrise. Donate food to elderly persons on Sundays.",
+    gemstone: "Natural Ruby (Manikyam) or Yellow Sapphire (Pushparagam) for protective radiance."
   },
   {
     id: "kanni",
     name: "Kanni (Virgo)",
     tamilName: "கன்னி",
-    element: "earth",
     symbol: "♍",
-    iconName: "Mountain",
-    rahuHouse: "6th House (Shatru/Roga Sthanam)",
-    ketuHouse: "12th House (Moksha Sthanam)",
-    rating: "9.2 / 10",
-    statusBadge: "Spectacular Victory",
-    statusClass: "badge-temple-gold",
-    summary: "Lord Raghu in the 6th house is classical Rajayoga! Overwhelming victory over rivals, debt liquidation, foreign settlement paths, and spiritual liberation.",
-    career: "Decisive triumph in competitive exams, court matters, and high-stakes corporate competitions.",
-    finance: "Speedy clearance of previous loans and outstanding dues. Growth in disposable savings.",
-    health: "Chronic ailments find effective medical remedies. Rejuvenated physical vigor and stamina.",
-    family: "Spiritual inclinations increase. Peaceful domestic environment and blessings from spiritual teachers.",
-    remedy: "Chant Sri Subramanya Bhujangam on Sashti tithis. Offer bananas to elephants or monkeys.",
-    gemstone: "Natural Chrysoberyl Cat's Eye (Vaidooryam) for profound 12th house Moksha protection."
+    rahuHouse: "6th House (Shatru/Roga Sthanam - Aquarius)",
+    ketuHouse: "12th House (Moksha Sthanam - Leo)",
+    rating: "9.3 / 10",
+    statusBadge: "Supreme Victory & Debt Relief (வெற்றி யோகம்)",
+    statusColor: "bg-green-100 text-green-800 border-green-300",
+    summary: "Rahu in the 6th house is highly celebrated in classical astrology for vanquishing competitors, clearing chronic debts, and achieving legal triumphs.",
+    career: "Stunning victories in competitive examinations, court cases, promotion battles, and corporate tenders.",
+    finance: "Rapid clearance of longstanding debts and loans. Inflow of fresh capital investments.",
+    health: "Remarkable recovery from lingering health ailments. Vitality returns fully.",
+    family: "Peace of mind restored. Harmonious domestic atmosphere and charitable deeds.",
+    pariharam: "Offer worship to Lord Sarabeswara or Goddess Pratyangira on Sundays during Rahu Kalam.",
+    gemstone: "Finest quality Hessonite (Gomed) or Green Tourmaline in silver."
   },
   {
-    id: "thula",
-    name: "Thula (Libra)",
+    id: "thulam",
+    name: "Thulam (Libra)",
     tamilName: "துலாம்",
-    element: "air",
     symbol: "♎",
-    iconName: "Wind",
-    rahuHouse: "5th House (Poorva Punya)",
-    ketuHouse: "11th House (Labha Sthanam)",
-    rating: "8.5 / 10",
-    statusBadge: "Creative Prosperity",
-    statusClass: "badge-temple-gold",
-    summary: "Surge in creative intellect, progeny happiness, long-standing wish fulfillments, and lucrative strategic networking.",
-    career: "Exceptional success for creators, consultants, educators, software architects, and designers.",
-    finance: "Multiple dividend streams, lucrative advisory fees, and profitable stock portfolio rebalancing.",
-    health: "Maintain balanced digestion and regular sleep hours. Avoid excessive caffeine.",
-    family: "Good news regarding children's aspirations. Deep, fulfilling friendships with spiritual seekers.",
-    remedy: "Offer ghee lamps to Goddess Mahalakshmi on Fridays. Chant Sri Suktam with devotion.",
-    gemstone: "Natural Diamond or White Sapphire, combined with honey-brown Gomedha talisman."
+    rahuHouse: "5th House (Poorva Punya - Aquarius)",
+    ketuHouse: "11th House (Labha Sthanam - Leo)",
+    rating: "8.7 / 10",
+    statusBadge: "Creative Genius & Profits (புண்ணிய யோகம்)",
+    statusColor: "bg-green-100 text-green-800 border-green-300",
+    summary: "Ketu in the 11th brings effortless gains and realization of dreams, while Rahu in 5th ignites speculative intelligence and creative fame.",
+    career: "Artistic, technological, and research endeavours gain industry-wide acclaim. Influential mentoring.",
+    finance: "Unexpected profits through investments, creative royalties, and professional consultancies.",
+    health: "Good physical stamina. Incorporate satvik dietary habits and breathing exercises.",
+    family: "Auspicious child-birth blessings for couples. Joyous celebrations with close friends.",
+    pariharam: "Chant Sri Lalitha Sahasranamam on Fridays. Offer sweets to young girl children.",
+    gemstone: "Sparkling White Sapphire or Diamond set in platinum or silver."
   },
   {
     id: "viruchigam",
     name: "Viruchigam (Scorpio)",
     tamilName: "விருச்சிகம்",
-    element: "water",
     symbol: "♏",
-    iconName: "Droplets",
-    rahuHouse: "4th House (Sukha/Matru Sthanam)",
-    ketuHouse: "10th House (Karma Sthanam)",
-    rating: "7.8 / 10",
-    statusBadge: "Deep Transformation",
-    statusClass: "badge-saffron",
-    summary: "Real estate and home environment evolution. Work philosophy shifts towards deeper purpose rather than mere material accumulation.",
-    career: "Career role changes, remote work flexibility, or stepping into mentorship and advisory roles.",
-    finance: "Substantial capital deployment into land, residential property, or architectural improvements.",
-    health: "Pay special attention to cardiovascular fitness and maternal wellness. Routine health checkups advised.",
-    family: "Domestic harmony improves when you maintain patience during family property discussions.",
-    remedy: "Chant Hanuman Chalisa on Tuesdays. Offer red sindoor to Lord Anjaneya.",
-    gemstone: "Natural Italian Red Coral (Moonga) or Yellow Sapphire after Astrologer chart reading."
+    rahuHouse: "4th House (Sukha Sthanam - Aquarius)",
+    ketuHouse: "10th House (Karma Sthanam - Leo)",
+    rating: "7.9 / 10",
+    statusBadge: "Property & Career Balance (கவனமான முன்னேற்றம்)",
+    statusColor: "bg-amber-100 text-amber-800 border-amber-300",
+    summary: "Purchasing properties, modernizing living spaces, and re-evaluating career trajectory with profound spiritual focus.",
+    career: "Transition toward advisory, teaching, research, or independent consultancy roles.",
+    finance: "Investments in land, vehicle, or ancestral property upgrades yield solid future value.",
+    health: "Pay attentive care to heart and blood pressure rhythm. Regular morning walks are beneficial.",
+    family: "Maintain warmth in household discussions. Spend quality time with parents.",
+    pariharam: "Offer red flowers to Lord Murugan on Tuesdays. Recite Kanda Sashti Kavasam.",
+    gemstone: "Natural Red Coral (Pavazham) or Yellow Topaz."
   },
   {
     id: "dhanusu",
     name: "Dhanusu (Sagittarius)",
     tamilName: "தனுசு",
-    element: "fire",
     symbol: "♐",
-    iconName: "Flame",
-    rahuHouse: "3rd House (Bhratru/Dhairya Sthanam)",
-    ketuHouse: "9th House (Dharma Sthanam)",
-    rating: "9.3 / 10",
-    statusBadge: "Heroic Success & Power",
-    statusClass: "badge-temple-gold",
-    summary: "Lord Raghu in 3rd creates unstoppable courage, charismatic communication, viral brand recognition, and commercial dominance.",
-    career: "Explosive growth for entrepreneurs, digital marketers, advocates, speakers, and defense personnel.",
-    finance: "Significant profits from commercial contracts, publications, and short-distance trade.",
-    health: "High physical enthusiasm, athletic endurance, and mental resilience.",
-    family: "Sibling cooperation and pilgrimage journeys to ancestral kula deivam temples.",
-    remedy: "Chant Dakshinamurthy Stotram on Thursdays. Offer yellow chickpeas (channa) to Guru.",
-    gemstone: "Untreated Ceylon Yellow Sapphire (Pukhraj) on index finger in gold."
+    rahuHouse: "3rd House (Dhairya Sthanam - Aquarius)",
+    ketuHouse: "9th House (Bhagya Sthanam - Leo)",
+    rating: "9.4 / 10",
+    statusBadge: "Golden Courage & Prosperity (தைரிய லக்ஷ்மி யோகம்)",
+    statusColor: "bg-green-100 text-green-800 border-green-300",
+    summary: "Rahu in the 3rd house is one of the most auspicious placements in Vedic astrology, bringing unmatched confidence, media fame, and victory in all endeavours.",
+    career: "Dynamic public speaking, rapid promotions, digital media breakthroughs, and triumphant negotiations.",
+    finance: "Exponential rise in liquid cash flow, profitable contracts, and successful entrepreneurial leaps.",
+    health: "Boundless energy and mental cheerfulness. High athletic stamina.",
+    family: "Siblings flourish and offer complete solidarity. Auspicious travels with family.",
+    pariharam: "Visit Srikalahasti or Thirunageswaram. Perform Guru Dakshinamurthy pooja on Thursdays.",
+    gemstone: "Brilliant Natural Yellow Sapphire (Pushparagam) in gold."
   },
   {
-    id: "magaram",
-    name: "Magaram (Capricorn)",
+    id: "makaram",
+    name: "Makaram (Capricorn)",
     tamilName: "மகரம்",
-    element: "earth",
     symbol: "♑",
-    iconName: "Mountain",
-    rahuHouse: "2nd House (Dhana Sthanam)",
-    ketuHouse: "8th House (Ayur Sthanam)",
-    rating: "7.9 / 10",
-    statusBadge: "Financial Accumulation",
-    statusClass: "badge-saffron",
-    summary: "Strong accumulation of capital assets and family wealth. Exercise caution with speech and avoid abrupt disputes over ancestral matters.",
-    career: "Finance, banking, corporate treasury, and wealth management professions experience surge.",
-    finance: "Substantial growth in bank balances, gold accumulations, and fixed deposits.",
-    health: "Regulate dietary habits; safeguard throat, eyes, and dental health.",
-    family: "Diplomatic communication keeps extended family ties warm and respectful.",
-    remedy: "Light sesame oil lamp for Lord Shani on Saturdays. Feed black sesame sweets to the needy.",
-    gemstone: "Natural Blue Sapphire (Neelam) or Amethyst, harmonized with Hessonite."
+    rahuHouse: "2nd House (Dhana & Vak Sthanam - Aquarius)",
+    ketuHouse: "8th House (Ayur Sthanam - Leo)",
+    rating: "7.8 / 10",
+    statusBadge: "Prudent Speech & Savings (பொருளாதார கவனம்)",
+    statusColor: "bg-amber-100 text-amber-800 border-amber-300",
+    summary: "Rahu in 2nd can bring sudden financial inflows but calls for diplomacy in speech. Ketu in 8th deepens occult interest and spiritual research.",
+    career: "Consistent professional performance. Opportunities in banking, research, and data analysis.",
+    finance: "Sudden monetary gains balanced with family expenditures. Avoid giving unsecured loans.",
+    health: "Take care of teeth, vision, and throat health. Regular rest is necessary.",
+    family: "Avoid sarcastic words in family gatherings. Maintain pleasant and comforting communication.",
+    pariharam: "Light mustard or sesame oil lamps for Lord Hanuman on Saturdays. Chant Hanuman Chalisa.",
+    gemstone: "Natural Blue Sapphire (Neelam) or Amethyst under expert guidance."
   },
   {
-    id: "kumbam",
-    name: "Kumbam (Aquarius)",
+    id: "kumbham",
+    name: "Kumbham (Aquarius)",
     tamilName: "கும்பம்",
-    element: "air",
     symbol: "♒",
-    iconName: "Wind",
-    rahuHouse: "1st House (Janma Sthanam)",
-    ketuHouse: "7th House (Kalathra Sthanam)",
-    rating: "8.0 / 10",
-    statusBadge: "Personal Metamorphosis",
-    statusClass: "badge-saffron",
-    summary: "A historic transit as Lord Raghu occupies your Janma Rasi! Massive reinvention of personality, global aspirations, and philosophical rebirth.",
-    career: "Unconventional career paths, artificial intelligence, pioneering startups, and international fame.",
-    finance: "Surge in earning ambition. Avoid impulse lifestyle expenditures and speculative traps.",
-    health: "Prioritize nerve nourishment, adequate sleep, and daily grounding walks in nature.",
-    family: "Give spouse ample personal space; mutual respect prevents unnecessary misunderstandings.",
-    remedy: "Worship Lord Bhairava on Ashtami tithi. Chant 'Om Hram Hreem Hroum Sah Rahave Namah' 108 times.",
-    gemstone: "Certified Ceylon Gomedha (Hessonite Garnet) in silver to channel Lord Raghu's cosmic power."
+    rahuHouse: "1st House (Janma Sthanam - Aquarius)",
+    ketuHouse: "7th House (Kalathra Sthanam - Leo)",
+    rating: "7.7 / 10",
+    statusBadge: "Personal Reinvention (மறுமலர்ச்சி காலம்)",
+    statusColor: "bg-amber-100 text-amber-800 border-amber-300",
+    summary: "Rahu enters your Janma Rasi initiating an ambitious cycle of personal rebranding, charisma, and international ambitions. Keep ego in check.",
+    career: "Bold career leaps, high visibility in public life, and venture into innovative tech or import-export.",
+    finance: "High cash turnover. Ensure all transactions and business taxes are strictly documented.",
+    health: "Avoid irregular meal times and mental overstimulation. Practice daily pranayama.",
+    family: "Nurture marital warmth and mutual transparency. Avoid unnecessary suspicions.",
+    pariharam: "Perform archana at Thirunageswaram for Lord Rahu. Feed crows sesame-rice balls on Saturdays.",
+    gemstone: "Certified Hessonite (Gomed) or Blue Topaz energized in Rahu hora."
   },
   {
     id: "meenam",
     name: "Meenam (Pisces)",
     tamilName: "மீனம்",
-    element: "water",
     symbol: "♓",
-    iconName: "Droplets",
-    rahuHouse: "12th House (Vraya/Moksha Sthanam)",
-    ketuHouse: "6th House (Shatru Jaya)",
-    rating: "8.4 / 10",
-    statusBadge: "Spiritual & Foreign Grace",
-    statusClass: "badge-temple-gold",
-    summary: "Lord Kethu in 6th crushes competitors while Lord Raghu in 12th opens foreign doors, hospital/wellness projects, and high spiritual realisations.",
-    career: "Overseas relocation, foreign trade, multinational appointments, and healthcare leadership.",
-    finance: "Expenditures on auspicious ceremonies, charity, and international travel. Steady inflows.",
-    health: "Sleep hygiene is essential. Incorporate relaxing sound baths or temple visits in evening.",
-    family: "Inner peace prevails. Spiritual maturity brings serene acceptance and family blessings.",
-    remedy: "Perform Ganapati Homam on Sankatahara Chaturthi. Chant Lord Kethu Gayatri Mantra.",
-    gemstone: "Natural Chrysoberyl Cat's Eye (Vaidooryam) on middle finger in silver or gold."
+    rahuHouse: "12th House (Vraya/Moksha Sthanam - Aquarius)",
+    ketuHouse: "6th House (Shatru Sthanam - Leo)",
+    rating: "8.5 / 10",
+    statusBadge: "Foreign Settlement & Spiritual Peace (சுப விரயம் & மோக்ஷம்)",
+    statusColor: "bg-green-100 text-green-800 border-green-300",
+    summary: "Ketu in the 6th crushes all hidden adversaries and illnesses, while Rahu in 12th creates auspicious foreign travel, overseas settlements, and spiritual charities.",
+    career: "Lucrative postings abroad, foreign immigration approvals, and success in multi-national corporations.",
+    finance: "Substantial earnings directed toward auspicious celebrations (Subha Vrayam), temple donations, and property.",
+    health: "Excellent recovery from chronic health concerns. Prioritize peaceful sleep.",
+    family: "Joyful overseas vacations with loved ones. Harmonious domestic life.",
+    pariharam: "Visit Thirunageswaram and Keezhaperumpallam. Donate blankets to the needy on Amavasya.",
+    gemstone: "Natural Yellow Sapphire or Vaidooryam (Cat's Eye) for Ketu empowerment."
   }
 ];
 
-// Document Ready Initialization
+let selectedRasiId = "mesham";
+
+// Initialize on page load
 document.addEventListener("DOMContentLoaded", () => {
-  initCountdown();
-  renderRasiGrid("all");
-  initRasiFilters();
-  initBookingModal();
-  initRasiModal();
-  initGemstoneCalculator();
-  initFAQAccordion();
-  initMantraSimulation();
-  initMobileMenu();
+  renderRasiPills();
+  selectRasi("mesham");
 });
 
-// 1. Live Countdown Muhurtham Timer (Countdown to Auspicious Transit Window)
-function initCountdown() {
-  const targetDate = new Date();
-  targetDate.setDate(targetDate.getDate() + 28);
-  targetDate.setHours(targetDate.getHours() + 14);
-
-  function updateTimer() {
-    const now = new Date().getTime();
-    const distance = targetDate.getTime() - now;
-
-    if (distance < 0) {
-      document.getElementById("timer-days").innerText = "00";
-      document.getElementById("timer-hours").innerText = "00";
-      document.getElementById("timer-mins").innerText = "00";
-      document.getElementById("timer-secs").innerText = "00";
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const secs = Math.floor((distance % (1000 * 60)) / 1000);
-
-    const pad = (n) => String(n).padStart(2, "0");
-
-    const daysEl = document.getElementById("timer-days");
-    const hoursEl = document.getElementById("timer-hours");
-    const minsEl = document.getElementById("timer-mins");
-    const secsEl = document.getElementById("timer-secs");
-
-    if (daysEl) daysEl.innerText = pad(days);
-    if (hoursEl) hoursEl.innerText = pad(hours);
-    if (minsEl) minsEl.innerText = pad(mins);
-    if (secsEl) secsEl.innerText = pad(secs);
-  }
-
-  updateTimer();
-  setInterval(updateTimer, 1000);
-}
-
-// 2. Render 12 Rasi Palan Cards
-function renderRasiGrid(filterElement) {
-  const container = document.getElementById("rasi-cards-grid");
+// Render 12 Rasi Pill Buttons
+function renderRasiPills() {
+  const container = document.getElementById("rasi-pills-container");
   if (!container) return;
 
-  const filtered = filterElement === "all" 
-    ? rasiData 
-    : rasiData.filter(item => item.element === filterElement);
-
-  container.innerHTML = filtered.map(item => `
-    <div class="glass-card rasi-card p-6 flex flex-col justify-between" data-id="${item.id}">
-      <div>
-        <div class="flex items-start justify-between gap-2 mb-3">
-          <div class="flex items-center gap-3">
-            <span class="w-12 h-12 rounded-full bg-amber-100/90 border border-amber-300 text-amber-900 flex items-center justify-center text-2xl font-bold shadow-sm">
-              ${item.symbol}
-            </span>
-            <div>
-              <h3 class="font-serif text-xl font-bold text-amber-950">${item.name}</h3>
-              <p class="text-sm font-semibold text-amber-800">${item.tamilName} • ${capitalize(item.element)} Element</p>
-            </div>
-          </div>
-          <span class="inline-block text-xs px-2.5 py-1 rounded-full ${item.statusClass}">
-            ${item.statusBadge}
-          </span>
-        </div>
-
-        <div class="space-y-2 mb-4 text-xs font-semibold text-amber-900/90 bg-amber-50/70 p-3 rounded-lg border border-amber-200/60">
-          <div class="flex items-center justify-between">
-            <span class="text-amber-800 font-medium">🪐 Raghu Position:</span>
-            <span class="font-bold text-amber-950">${item.rahuHouse}</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span class="text-amber-800 font-medium">🌑 Kethu Position:</span>
-            <span class="font-bold text-amber-950">${item.ketuHouse}</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span class="text-amber-800 font-medium">✨ Transit Score:</span>
-            <span class="font-extrabold text-red-700">${item.rating}</span>
-          </div>
-        </div>
-
-        <p class="text-sm text-stone-800 line-clamp-3 mb-4 leading-relaxed font-normal">
-          ${item.summary}
-        </p>
-      </div>
-
-      <div class="pt-3 border-t border-amber-200/80 flex items-center justify-between gap-2">
-        <button 
-          onclick="openRasiModal('${item.id}')"
-          class="text-xs font-bold text-red-700 hover:text-red-900 flex items-center gap-1 group py-1.5 transition-colors">
-          <span>Read Detailed Horoscope</span>
-          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </button>
-
-        <button 
-          onclick="openBookingModal('Gemstone Recommendation', '${item.name}')"
-          class="text-xs font-bold bg-amber-100 hover:bg-amber-200 text-amber-950 px-3 py-1.5 rounded-md border border-amber-300 transition-all hover:scale-105">
-          Book Consultation (₹999)
-        </button>
-      </div>
-    </div>
+  container.innerHTML = rasiData.map(r => `
+    <button 
+      type="button" 
+      onclick="selectRasi('${r.id}')" 
+      id="pill-${r.id}"
+      class="rasi-pill-btn ${r.id === selectedRasiId ? 'active' : ''}">
+      <span>${r.symbol}</span>
+      <span>${r.tamilName} (${r.name.split(' ')[0]})</span>
+    </button>
   `).join("");
 }
 
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-// 3. Filter Tabs
-function initRasiFilters() {
-  const filterBtns = document.querySelectorAll(".rasi-filter-btn");
-  filterBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      filterBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      const element = btn.getAttribute("data-filter");
-      renderRasiGrid(element);
-    });
+// Select a Rasi & Update Result Card
+function selectRasi(id) {
+  selectedRasiId = id;
+  
+  // Update active pill button state
+  document.querySelectorAll(".rasi-pill-btn").forEach(btn => {
+    btn.classList.remove("active");
   });
-}
+  const activePill = document.getElementById(`pill-${id}`);
+  if (activePill) activePill.classList.add("active");
 
-// 4. Detailed Horoscope Modal
-function initRasiModal() {
-  const modal = document.getElementById("rasi-detail-modal");
-  const closeBtn = document.getElementById("close-rasi-modal");
+  const rasi = rasiData.find(r => r.id === id);
+  if (!rasi) return;
 
-  if (closeBtn && modal) {
-    closeBtn.addEventListener("click", () => {
-      modal.classList.add("hidden");
-      document.body.style.overflow = "auto";
-    });
+  const resultContainer = document.getElementById("rasi-result-card");
+  if (!resultContainer) return;
 
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.classList.add("hidden");
-        document.body.style.overflow = "auto";
-      }
-    });
-  }
-}
-
-window.openRasiModal = function(rasiId) {
-  const item = rasiData.find(r => r.id === rasiId);
-  if (!item) return;
-
-  const modal = document.getElementById("rasi-detail-modal");
-  const content = document.getElementById("rasi-modal-content");
-  if (!modal || !content) return;
-
-  content.innerHTML = `
-    <div class="flex items-start justify-between border-b border-amber-200/80 pb-4 mb-4">
-      <div class="flex items-center gap-3">
-        <span class="w-14 h-14 rounded-full bg-amber-100 border-2 border-amber-400 text-amber-950 flex items-center justify-center text-3xl font-bold shadow-sm">
-          ${item.symbol}
-        </span>
-        <div>
-          <h2 class="font-serif text-2xl font-bold text-amber-950">${item.name} (${item.tamilName})</h2>
-          <p class="text-sm font-semibold text-amber-800">${capitalize(item.element)} Element • Score: <span class="text-red-700 font-bold">${item.rating}</span></p>
+  resultContainer.innerHTML = `
+    <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-orange-200 gap-4">
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="text-3xl sm:text-4xl">${rasi.symbol}</span>
+          <div>
+            <h3 class="font-heading font-extrabold text-2xl sm:text-3xl text-[#2A1202]">
+              ${rasi.name}
+            </h3>
+            <span class="tamil-text text-base sm:text-lg text-orange-900 font-bold block">
+              ${rasi.tamilName} ராசி பலன்கள் & பரிகாரங்கள்
+            </span>
+          </div>
         </div>
       </div>
-      <span class="text-xs font-bold px-3 py-1 rounded-full ${item.statusClass}">
-        ${item.statusBadge}
-      </span>
-    </div>
-
-    <!-- House Highlights -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
-      <div class="bg-amber-50/90 p-3.5 rounded-xl border border-amber-300/70">
-        <div class="text-xs font-bold text-amber-900 uppercase tracking-wide">🪐 Lord Raghu Transit Axis</div>
-        <div class="text-base font-bold text-amber-950 mt-1">${item.rahuHouse}</div>
-        <p class="text-xs text-amber-800/90 mt-1">Catalyzes sudden worldly ambitions, unconventional breakthroughs & foreign alliances.</p>
-      </div>
-      <div class="bg-amber-50/90 p-3.5 rounded-xl border border-amber-300/70">
-        <div class="text-xs font-bold text-amber-900 uppercase tracking-wide">🌑 Lord Kethu Transit Axis</div>
-        <div class="text-base font-bold text-amber-950 mt-1">${item.ketuHouse}</div>
-        <p class="text-xs text-amber-800/90 mt-1">Activates past-life karmic resolution, intuitive perception & spiritual detachment.</p>
+      <div class="flex items-center gap-3">
+        <span class="px-3.5 py-1.5 rounded-full border text-xs sm:text-sm font-bold ${rasi.statusColor}">
+          ${rasi.statusBadge}
+        </span>
+        <span class="text-xs sm:text-sm font-extrabold text-[#2A1202] bg-orange-100 px-3 py-1.5 rounded-full">
+          Transit Score: ${rasi.rating}
+        </span>
       </div>
     </div>
 
-    <!-- Deep-dive categories -->
-    <div class="space-y-4 mb-6">
-      <div class="p-4 bg-white/80 rounded-xl border border-amber-200 shadow-sm">
-        <h4 class="font-serif text-base font-bold text-amber-950 flex items-center gap-2 mb-1.5">
-          💼 Career, Business & Social Status
-        </h4>
-        <p class="text-sm text-stone-800 leading-relaxed">${item.career}</p>
+    <!-- Transit Houses Summary -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+      <div class="p-4 rounded-xl bg-orange-50 border border-orange-200">
+        <span class="text-xs font-bold uppercase tracking-wider text-orange-700 block mb-1">Rahu (ராகு) Transit House</span>
+        <p class="font-heading font-bold text-base text-[#2A1202]">${rasi.rahuHouse}</p>
       </div>
-
-      <div class="p-4 bg-white/80 rounded-xl border border-amber-200 shadow-sm">
-        <h4 class="font-serif text-base font-bold text-amber-950 flex items-center gap-2 mb-1.5">
-          💰 Wealth, Investments & Cash Flow
-        </h4>
-        <p class="text-sm text-stone-800 leading-relaxed">${item.finance}</p>
-      </div>
-
-      <div class="p-4 bg-white/80 rounded-xl border border-amber-200 shadow-sm">
-        <h4 class="font-serif text-base font-bold text-amber-950 flex items-center gap-2 mb-1.5">
-          ❤️ Family Harmony, Relationships & Marital Life
-        </h4>
-        <p class="text-sm text-stone-800 leading-relaxed">${item.family}</p>
-      </div>
-
-      <div class="p-4 bg-white/80 rounded-xl border border-amber-200 shadow-sm">
-        <h4 class="font-serif text-base font-bold text-amber-950 flex items-center gap-2 mb-1.5">
-          🌿 Health, Energy & Vitality
-        </h4>
-        <p class="text-sm text-stone-800 leading-relaxed">${item.health}</p>
+      <div class="p-4 rounded-xl bg-amber-50 border border-amber-200">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-700 block mb-1">Ketu (கேது) Transit House</span>
+        <p class="font-heading font-bold text-base text-[#2A1202]">${rasi.ketuHouse}</p>
       </div>
     </div>
 
-    <!-- Prescribed Vedic Remedies -->
-    <div class="p-4 bg-gradient-to-r from-amber-100/90 via-orange-100/90 to-amber-100/90 rounded-xl border border-amber-400 mb-6">
-      <h4 class="font-serif text-base font-bold text-red-900 mb-2 flex items-center gap-2">
-        🕉️ Tailored Vedic Remedy (Pariharam)
-      </h4>
-      <p class="text-sm text-amber-950 font-medium leading-relaxed mb-2">
-        ${item.remedy}
-      </p>
-      <div class="text-xs font-semibold text-amber-900 flex items-center gap-1.5">
-        <span>💎 Recommended Gemstone:</span>
-        <span class="font-bold text-red-800">${item.gemstone}</span>
+    <p class="text-base text-[#3A1400] font-medium leading-relaxed mb-6">
+      ${rasi.summary}
+    </p>
+
+    <!-- Detailed Predictions Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div class="p-3.5 rounded-lg bg-stone-50 border border-stone-200">
+        <h4 class="text-xs font-bold text-orange-800 uppercase mb-1">💼 Career & Profession</h4>
+        <p class="text-xs text-stone-700 leading-relaxed">${rasi.career}</p>
+      </div>
+      <div class="p-3.5 rounded-lg bg-stone-50 border border-stone-200">
+        <h4 class="text-xs font-bold text-orange-800 uppercase mb-1">💰 Finance & Wealth</h4>
+        <p class="text-xs text-stone-700 leading-relaxed">${rasi.finance}</p>
+      </div>
+      <div class="p-3.5 rounded-lg bg-stone-50 border border-stone-200">
+        <h4 class="text-xs font-bold text-orange-800 uppercase mb-1">🌿 Health & Peace</h4>
+        <p class="text-xs text-stone-700 leading-relaxed">${rasi.health}</p>
+      </div>
+      <div class="p-3.5 rounded-lg bg-stone-50 border border-stone-200">
+        <h4 class="text-xs font-bold text-orange-800 uppercase mb-1">🏡 Family & Marriage</h4>
+        <p class="text-xs text-stone-700 leading-relaxed">${rasi.family}</p>
       </div>
     </div>
 
-    <!-- Modal Action Buttons -->
-    <div class="flex flex-col sm:flex-row items-center justify-end gap-3 pt-4 border-t border-amber-200">
+    <!-- Pariharam & Gemstone Box -->
+    <div class="p-5 rounded-xl bg-gradient-to-r from-orange-100/90 via-amber-100/70 to-orange-100/90 border-2 border-orange-300 mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <h4 class="font-heading font-bold text-sm text-[#2A1202] mb-1">
+            🕉️ Prescribed Pariharam (பரிகாரம்):
+          </h4>
+          <p class="text-xs sm:text-sm text-[#4A2004] leading-relaxed">
+            ${rasi.pariharam}
+          </p>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-sm text-[#2A1202] mb-1">
+            💎 Auspicious Gemstone (அதிர்ஷ்ட ரத்தினம்):
+          </h4>
+          <p class="text-xs sm:text-sm text-[#4A2004] leading-relaxed">
+            ${rasi.gemstone}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Highlighted Action Button for this Rasi -->
+    <div class="text-center pt-2">
       <button 
-        onclick="document.getElementById('rasi-detail-modal').classList.add('hidden'); document.body.style.overflow='auto';"
-        class="w-full sm:w-auto px-5 py-2.5 rounded-lg border border-amber-300 font-bold text-amber-950 hover:bg-amber-100 transition-colors text-sm">
-        Close Window
-      </button>
-
-      <button 
-        onclick="document.getElementById('rasi-detail-modal').classList.add('hidden'); openBookingModal('Gemstone Recommendation', '${item.name}');"
-        class="w-full sm:w-auto btn-pulsing-crimson px-6 py-2.5 rounded-lg font-bold text-sm flex items-center justify-center gap-2">
-        <span>Book Consultation (₹999)</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        type="button" 
+        onclick="openBookingModal('Personalized Chart Analysis for ${rasi.name}', '${rasi.name}')"
+        class="btn-highlighted-cta text-base sm:text-lg px-8 py-3.5 shadow-xl">
+        <span>Book Personal Consultation for ${rasi.name.split(' ')[0]}</span>
+        <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
         </svg>
       </button>
     </div>
   `;
+}
 
-  modal.classList.remove("hidden");
-  document.body.style.overflow = "hidden";
-};
-
-// 5. Interactive "Book Your Appointment" Modal & Workflow
-function initBookingModal() {
+// Booking Modal Controls
+function openBookingModal(packageName, prefilledRasi = "") {
   const modal = document.getElementById("booking-modal");
-  const closeBtn = document.getElementById("close-booking-modal");
-  const form = document.getElementById("appointment-booking-form");
-  const serviceSelect = document.getElementById("consultation-type");
-  const priceDisplay = document.getElementById("modal-price-badge");
+  const pkgLabel = document.getElementById("modal-package-name");
+  const formRasi = document.getElementById("form-rasi");
+  const form = document.getElementById("consultation-form");
+  const successBox = document.getElementById("booking-success");
 
-  if (!modal) return;
-
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      modal.classList.add("hidden");
-      document.body.style.overflow = "auto";
-    });
+  if (pkgLabel && packageName) {
+    pkgLabel.textContent = packageName;
   }
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.add("hidden");
-      document.body.style.overflow = "auto";
+  if (formRasi && prefilledRasi) {
+    for (let i = 0; i < formRasi.options.length; i++) {
+      if (formRasi.options[i].text.includes(prefilledRasi.split(' ')[0])) {
+        formRasi.selectedIndex = i;
+        break;
+      }
     }
-  });
-
-  // Price auto-updater based on consultation selection
-  if (serviceSelect && priceDisplay) {
-    serviceSelect.addEventListener("change", () => {
-      updatePriceFromSelect(serviceSelect.value);
-    });
   }
 
-  // Handle Form Submission with realistic step transition
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      
-      const submitBtn = document.getElementById("booking-submit-btn");
-      const originalText = submitBtn.innerHTML;
+  // Reset states
+  if (form) form.classList.remove("hidden");
+  if (successBox) successBox.classList.add("hidden");
 
-      // Loading State
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `
-        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
-        <span>Securing Astrologer Slot...</span>
-      `;
-
-      setTimeout(() => {
-        // Collect form data
-        const clientName = document.getElementById("client-name").value || "Valued Seeker";
-        const clientMobile = document.getElementById("client-mobile").value || "+91 98400 XXXXX";
-        const clientEmail = document.getElementById("client-email").value || "devotee@example.com";
-        const selectedPackage = serviceSelect ? serviceSelect.options[serviceSelect.selectedIndex].text : "Gemstone & Transit Recommendation (₹999)";
-        const preferredDate = document.getElementById("client-pref-date").value || "Next Auspicious Slot";
-
-        // Show Success Confirmation State
-        const formContainer = document.getElementById("booking-form-container");
-        const successContainer = document.getElementById("booking-success-container");
-        
-        if (formContainer && successContainer) {
-          formContainer.classList.add("hidden");
-          successContainer.classList.remove("hidden");
-
-          // Generate unique booking code
-          const randomCode = "RKP-" + Math.floor(1000 + Math.random() * 9000);
-          document.getElementById("confirm-booking-id").innerText = randomCode;
-          document.getElementById("confirm-client-name").innerText = clientName;
-          document.getElementById("confirm-package-name").innerText = selectedPackage;
-          document.getElementById("confirm-datetime").innerText = preferredDate;
-        }
-
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-      }, 1200);
-    });
-  }
-}
-
-function updatePriceFromSelect(val) {
-  const priceDisplay = document.getElementById("modal-price-badge");
-  if (!priceDisplay) return;
-  priceDisplay.innerText = "₹999 (Inclusive of Tax & Vedic Vidhi)";
-}
-
-// Global function to trigger booking modal from any button on page
-window.openBookingModal = function(packageType = "Gemstone Recommendation", rasiNotes = "") {
-  const modal = document.getElementById("booking-modal");
-  const formContainer = document.getElementById("booking-form-container");
-  const successContainer = document.getElementById("booking-success-container");
-  const select = document.getElementById("consultation-type");
-  const notesField = document.getElementById("client-queries");
-
-  if (!modal) return;
-
-  // Reset to form view
-  if (formContainer) formContainer.classList.remove("hidden");
-  if (successContainer) successContainer.classList.add("hidden");
-
-  // Pre-select package
-  if (select) {
-    select.value = "gemstone";
-    updatePriceFromSelect(select.value);
-  }
-
-  // Pre-fill query field if rasi was passed
-  if (notesField && rasiNotes) {
-    notesField.value = `Inquiry specifically regarding ${rasiNotes} during the Raghu-Kethu transit period.`;
-  }
-
-  modal.classList.remove("hidden");
-  document.body.style.overflow = "hidden";
-};
-
-// Demo quick-fill helper for instant testing
-window.fillDemoBooking = function() {
-  const nameField = document.getElementById("client-name");
-  const mobileField = document.getElementById("client-mobile");
-  const emailField = document.getElementById("client-email");
-  const dobField = document.getElementById("client-dob");
-  const tobField = document.getElementById("client-tob");
-  const pobField = document.getElementById("client-pob");
-  const prefDateField = document.getElementById("client-pref-date");
-  const queriesField = document.getElementById("client-queries");
-
-  if (nameField) nameField.value = "Ravi Chandran";
-  if (mobileField) mobileField.value = "9840012345";
-  if (emailField) emailField.value = "ravi.chandran@example.com";
-  if (dobField) dobField.value = "1990-05-15";
-  if (tobField) tobField.value = "10:30";
-  if (pobField) pobField.value = "Coimbatore, Tamil Nadu";
-  if (prefDateField) {
-    const today = new Date();
-    today.setDate(today.getDate() + 2);
-    prefDateField.value = today.toISOString().split("T")[0];
-  }
-  if (queriesField) queriesField.value = "Seeking astrological guidance for career promotion and family peace during Raghu Kethu transit.";
-};
-
-// 6. Interactive Gemstone Suitability Calculator Widget
-function initGemstoneCalculator() {
-  const form = document.getElementById("gemstone-calc-form");
-  const resultBox = document.getElementById("gemstone-calc-result");
-
-  if (!form || !resultBox) return;
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const rasi = document.getElementById("calc-rasi").value;
-    const goal = document.getElementById("calc-goal").value;
-
-    let gemTitle = "Natural Honey-Cinnamon Hessonite Garnet (Gomed)";
-    let gemPlanet = "Lord Raghu Pacification";
-    let gemCarat = "6.25 - 7.50 Ratti (Ceylon Origin)";
-    let gemFinger = "Middle Finger on Saturday evening during Raghu Hora";
-    let gemMetal = "Panchadhatu (5-Metal Alloy) or Pure Silver";
-    let gemDesc = "Channels Lord Raghu's magnetic cosmic rays, dissolves karmic barriers in business and foreign ventures, shields against hidden adversaries, and boosts mental clarity.";
-
-    if (goal === "ketu" || goal === "spiritual") {
-      gemTitle = "Natural Chrysoberyl Cat's Eye (Vaidooryam)";
-      gemPlanet = "Lord Kethu Pacification";
-      gemCarat = "5.50 - 6.75 Ratti (Natural Chrysoberyl)";
-      gemFinger = "Little or Middle Finger on Tuesday or Thursday morning";
-      gemMetal = "22K Gold or Panchadhatu";
-      gemDesc = "Pacifies Lord Kethu's intense spiritual fire, wards off evil eye (drishti), enhances intuitive insight, and protects health from inexplicable ailments.";
-    } else if (rasi === "kadagam" || rasi === "viruchigam") {
-      gemTitle = "Dual Raghu-Kethu Kavacham: Natural Gomed + Vaidooryam Pendant";
-      gemPlanet = "Balanced Lunar Node Shield";
-      gemCarat = "4.25 Ratti each certified natural gems";
-      gemFinger = "Worn as energised talisman pendant over Anahata (Heart) Chakra";
-      gemMetal = "Sterling Silver with sacred Yantra engraving";
-      gemDesc = "Specifically formulated for sensitive water signs to neutralize 8th/2nd house transit pressures while elevating financial stability.";
-    }
-
-    resultBox.innerHTML = `
-      <div class="glass-card p-5 border-2 border-amber-400 bg-amber-50/90 shadow-md">
-        <div class="flex items-center justify-between gap-2 border-b border-amber-300 pb-3 mb-3">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-red-800">Prescribed Vedic Gemstone</span>
-            <h4 class="font-serif text-lg font-bold text-amber-950">${gemTitle}</h4>
-          </div>
-          <span class="text-xs font-bold px-2.5 py-1 rounded bg-amber-200 text-amber-900 border border-amber-300">
-            ${gemPlanet}
-          </span>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-amber-950 mb-3">
-          <div class="bg-white/80 p-2 rounded border border-amber-200">
-            <span class="text-amber-800">Ideal Carat Weight:</span> ${gemCarat}
-          </div>
-          <div class="bg-white/80 p-2 rounded border border-amber-200">
-            <span class="text-amber-800">Auspicious Metal:</span> ${gemMetal}
-          </div>
-          <div class="bg-white/80 p-2 rounded border border-amber-200 sm:col-span-2">
-            <span class="text-amber-800">Wearing Vidhi:</span> ${gemFinger}
-          </div>
-        </div>
-
-        <p class="text-xs text-stone-800 leading-relaxed mb-4">
-          ${gemDesc}
-        </p>
-
-        <div class="flex items-center justify-between gap-3 pt-2">
-          <span class="text-xs font-bold text-amber-900">100% Lab Tested & Prana-Pratishtha Done</span>
-          <button 
-            type="button"
-            onclick="openBookingModal('Gemstone Recommendation', 'Prescribed Gem: ' + '${gemTitle}')"
-            class="btn-pulsing-crimson px-4 py-1.5 rounded-lg text-xs font-bold">
-            Consult Gemologist (₹999)
-          </button>
-        </div>
-      </div>
-    `;
-
-    resultBox.classList.remove("hidden");
-  });
-}
-
-// 7. Interactive FAQ Accordion
-function initFAQAccordion() {
-  const faqItems = document.querySelectorAll(".faq-item");
-
-  faqItems.forEach(item => {
-    const questionBtn = item.querySelector(".faq-question");
-    const answer = item.querySelector(".faq-answer");
-    const icon = item.querySelector(".faq-icon");
-
-    if (questionBtn && answer) {
-      questionBtn.addEventListener("click", () => {
-        const isOpen = !answer.classList.contains("hidden");
-
-        // Close other FAQs
-        faqItems.forEach(other => {
-          other.querySelector(".faq-answer")?.classList.add("hidden");
-          const otherIcon = other.querySelector(".faq-icon");
-          if (otherIcon) otherIcon.style.transform = "rotate(0deg)";
-        });
-
-        if (!isOpen) {
-          answer.classList.remove("hidden");
-          if (icon) icon.style.transform = "rotate(180deg)";
-        }
-      });
-    }
-  });
-}
-
-// 8. Sacred Audio Mantra Player Simulation
-function initMantraSimulation() {
-  const playBtn = document.getElementById("mantra-play-btn");
-  const statusText = document.getElementById("mantra-status-text");
-  const waveBars = document.getElementById("mantra-visualizer");
-
-  if (!playBtn) return;
-
-  let isPlaying = false;
-
-  playBtn.addEventListener("click", () => {
-    isPlaying = !isPlaying;
-
-    if (isPlaying) {
-      playBtn.innerHTML = `
-        <svg class="w-5 h-5 text-red-700" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-        </svg>
-      `;
-      if (statusText) statusText.innerText = "Playing: Sacred Raghu-Kethu Gayathri Chants (Temple Sanctum Recording)";
-      if (waveBars) waveBars.classList.remove("opacity-30");
-      
-      // Try Web Audio API tone synthesis for an authentic, soothing Vedic bell/drone sound
-      playSacredDroneSound();
-    } else {
-      playBtn.innerHTML = `
-        <svg class="w-5 h-5 text-red-700" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M8 5v14l11-7z"/>
-        </svg>
-      `;
-      if (statusText) statusText.innerText = "Click to Listen: Raghu & Kethu Stotram Temple Chants (Sample)";
-      if (waveBars) waveBars.classList.add("opacity-30");
-      stopSacredDroneSound();
-    }
-  });
-}
-
-let audioCtx = null;
-let droneOsc = null;
-let gainNode = null;
-
-function playSacredDroneSound() {
-  try {
-    const AudioContext = window.AudioContext || window.webkitAudioContext;
-    if (!AudioContext) return;
-
-    if (!audioCtx) audioCtx = new AudioContext();
-    if (audioCtx.state === "suspended") audioCtx.resume();
-
-    droneOsc = audioCtx.createOscillator();
-    gainNode = audioCtx.createGain();
-
-    // Sacred Tanpura Tanpura 'Sa' (C# 138.59 Hz)
-    droneOsc.type = "sine";
-    droneOsc.frequency.setValueAtTime(138.59, audioCtx.currentTime);
-
-    // Warm soft amplitude
-    gainNode.gain.setValueAtTime(0.01, audioCtx.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.12, audioCtx.currentTime + 1.5);
-
-    droneOsc.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-    droneOsc.start();
-  } catch (err) {
-    console.log("Web Audio gentle note:", err);
-  }
-}
-
-function stopSacredDroneSound() {
-  try {
-    if (gainNode && audioCtx) {
-      gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.8);
-      setTimeout(() => {
-        if (droneOsc) {
-          droneOsc.stop();
-          droneOsc.disconnect();
-          droneOsc = null;
-        }
-      }, 900);
-    }
-  } catch (err) {
-    console.log("Audio release note:", err);
-  }
-}
-
-// 9. Mobile Hamburger Navigation
-function initMobileMenu() {
-  const menuBtn = document.getElementById("mobile-menu-btn");
-  const mobileNav = document.getElementById("mobile-nav-drawer");
-  const closeBtn = document.getElementById("close-mobile-nav");
-  const navLinks = document.querySelectorAll(".mobile-nav-link");
-
-  if (!menuBtn || !mobileNav) return;
-
-  menuBtn.addEventListener("click", () => {
-    mobileNav.classList.remove("hidden");
+  if (modal) {
+    modal.classList.add("active");
     document.body.style.overflow = "hidden";
-  });
+  }
+}
 
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      mobileNav.classList.add("hidden");
-      document.body.style.overflow = "auto";
-    });
+function closeBookingModal() {
+  const modal = document.getElementById("booking-modal");
+  if (modal) {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+}
+
+// Close modal when clicking on backdrop
+document.addEventListener("click", (e) => {
+  const modal = document.getElementById("booking-modal");
+  if (e.target === modal) {
+    closeBookingModal();
+  }
+});
+
+// Escape key to close modal
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeBookingModal();
+  }
+});
+
+// FAQ Accordion Toggle
+function toggleFaq(index) {
+  const content = document.getElementById(`faq-content-${index}`);
+  const icon = document.getElementById(`faq-icon-${index}`);
+
+  if (!content || !icon) return;
+
+  const isHidden = content.classList.contains("hidden");
+
+  // Close all other FAQs
+  for (let i = 1; i <= 5; i++) {
+    const c = document.getElementById(`faq-content-${i}`);
+    const ic = document.getElementById(`faq-icon-${i}`);
+    if (c) c.classList.add("hidden");
+    if (ic) {
+      ic.textContent = "+";
+      ic.classList.remove("rotate-45");
+    }
   }
 
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      mobileNav.classList.add("hidden");
-      document.body.style.overflow = "auto";
-    });
-  });
+  if (isHidden) {
+    content.classList.remove("hidden");
+    icon.textContent = "×";
+    icon.classList.add("rotate-45");
+  }
+}
+
+// Handle Form Submission
+function handleBookingSubmit(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("form-name")?.value || "";
+  const phone = document.getElementById("form-phone")?.value || "";
+  const dob = document.getElementById("form-dob")?.value || "";
+  const tob = document.getElementById("form-tob")?.value || "Not provided";
+  const pob = document.getElementById("form-pob")?.value || "";
+  const rasi = document.getElementById("form-rasi")?.value || "";
+  const questions = document.getElementById("form-questions")?.value || "";
+  const packageName = document.getElementById("modal-package-name")?.textContent || "Peyarchi Consultation";
+
+  // Build WhatsApp pre-filled message URL
+  const waText = encodeURIComponent(
+    `*Rahu Ketu Peyarchi Consultation Booking*\n` +
+    `• Name: ${name}\n` +
+    `• Phone: ${phone}\n` +
+    `• Package: ${packageName.trim()}\n` +
+    `• DOB: ${dob}\n` +
+    `• TOB: ${tob}\n` +
+    `• POB: ${pob}\n` +
+    `• Rasi: ${rasi}\n` +
+    `• Query: ${questions}\n\n` +
+    `Please confirm my consultation slot with Dr. Kalpana Srikaanth.`
+  );
+
+  const waBtn = document.getElementById("success-wa-btn");
+  if (waBtn) {
+    waBtn.href = `https://wa.me/919894566555?text=${waText}`;
+  }
+
+  // Switch form to success state
+  const form = document.getElementById("consultation-form");
+  const successBox = document.getElementById("booking-success");
+  const successMessage = document.getElementById("success-message");
+
+  if (form) form.classList.add("hidden");
+  if (successBox) successBox.classList.remove("hidden");
+  if (successMessage) {
+    successMessage.textContent = `Thank you, ${name}! Your consultation details for ${packageName.trim()} have been recorded. You can complete your booking via our official Razorpay gateway or connect with our coordinator directly on WhatsApp.`;
+  }
 }
