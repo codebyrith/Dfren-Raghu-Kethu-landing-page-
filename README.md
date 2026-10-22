@@ -23,14 +23,12 @@ A modern, high-converting Vedic Astrology & Pariharam consultation landing page 
 rahu-ketu-astrology/
 ├── index.html           # Main semantic landing page markup
 ├── style.css            # Custom orange theme design system & animations
-├── vercel.json          # Vercel static configuration (framework: null)
-├── .vercelignore        # Files ignored by Vercel deployment
-├── local-dev-server.js  # Optional local preview server (npm run dev)
-├── package.json         # Project metadata and dev scripts
+├── app.js               # 12 Rasi transit data, interactive selectors & booking logic
+├── server.js            # Node.js static server
+├── package.json         # Package configuration
 ├── .gitignore           # Git ignore file
 ├── README.md            # Project documentation
-└── assets/              # Authentic images, TV logos, and application logic
-    ├── app.js           # 12 Rasi transit data & booking logic
+└── assets/              # Authentic images, TV logos, and consultation photos
     ├── office_consultation_1.jpg
     ├── office_consultation_2.jpg
     ├── bakthi_plus_1.png

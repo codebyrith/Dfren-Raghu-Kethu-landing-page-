@@ -2,8 +2,10 @@
   "name": "raghu-kethu-peyarchi",
   "version": "1.0.0",
   "description": "Raghu Kethu Peyarchi 2026-2027 Vedic Astrology & Gemstones Landing Page",
+  "main": "index.html",
   "scripts": {
-    "dev": "node local-dev-server.js"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
   "keywords": [
     "astrology",
