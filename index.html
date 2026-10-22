@@ -304,33 +304,36 @@
 
 
       <!-- ========================================================
-           4. RASI PALAN RESPONSIVE GRID (Images 6 & 7)
-           - Changed into responsive grid format instead of single-column list
-           - Element category filter tabs (All, Fire, Earth, Air, Water)
-           - 12 Rasi cards rendered in 3-column / 2-column grid
-           ======================================================== -->
-      <!-- ========================================================
-           4. RASI PALAN RESPONSIVE GRID (4 Columns x 3 Rows)
-           - 12 Rasis displayed in a clean, balanced grid
+           4. RASI PALAN INTERACTIVE 3x4 GRID SELECTOR (Matching User Screenshot)
+           - 3 Columns x 4 Rows Button Grid
+           - When a Rasi is clicked, detailed content opens below
            - Followed directly by the Google Reviews section
            ======================================================== -->
-      <section id="rasi-grid-section" class="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section id="rasi-grid-section" class="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         
-        <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+        <div class="text-center max-w-3xl mx-auto mb-8">
           <span class="text-xs font-bold uppercase tracking-wider text-orange-800 bg-orange-100 border border-orange-300 px-3.5 py-1 rounded-full inline-block mb-3">
-            12 Rasi Palangal Grid • 12 ராசி பலன்கள்
+            Instant Horoscope Checker • உங்கள் ராசி பலன்
           </span>
-          <h3 class="text-3xl sm:text-4xl font-extrabold text-[#2A1202] mb-3">
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#2A1202] mb-2">
             12 Rasi Rahu Ketu Peyarchi Predictions & Pariharam
           </h3>
-          <p class="text-sm sm:text-base text-[#4A2004] font-medium">
-            Explore complete predictions for all 12 signs in a neat grid. Find your Janma Rasi below for instant house placements, transit score, career, finance insights, and remedies.
+          <p class="text-sm sm:text-base text-[#4A2004] font-medium mb-1">
+            Free, takes 10 seconds. Choose your Janma Rasi (Moon sign):
+          </p>
+          <p class="tamil-text text-sm sm:text-base text-orange-950 font-bold">
+            உங்கள் ராசியைத் தேர்ந்தெடுத்து பலன்கள் & பரிகாரங்களை உடனே காண்க:
           </p>
         </div>
 
-        <!-- 12 Rasi Responsive Grid (4 cols on desktop, 3 on tablet, 2 on mobile) -->
-        <div id="rasi-cards-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
-          <!-- Populated dynamically by app.js -->
+        <!-- 3-Column x 4-Row Button Grid (Matching User Screenshot) -->
+        <div class="grid grid-cols-3 gap-2.5 sm:gap-3.5 max-w-xl mx-auto mb-8" id="rasi-buttons-grid">
+          <!-- Populated dynamically by app.js (12 buttons in 4 rows of 3) -->
+        </div>
+
+        <!-- Dynamic Selected Rasi Content Card (Opens on click) -->
+        <div id="rasi-result-card" class="bg-white rounded-2xl border-2 border-orange-200 p-6 sm:p-8 shadow-xl transition-all duration-300">
+          <!-- Dynamic content rendered by app.js -->
         </div>
 
       </section>
