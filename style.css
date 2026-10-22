@@ -340,20 +340,31 @@ h1, h2, h3, h4, .font-heading {
   object-fit: contain;
 }
 
-/* Sticky Bottom Bar (Exact match to reference site) */
+/* Sticky Bottom Bar (Enhanced, Taller, Prominent & Clearly Visible matching user request Image 2) */
 .sticky-bottom-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 50;
-  background: linear-gradient(90deg, rgba(42, 18, 2, 0.94) 0%, rgba(61, 28, 6, 0.95) 50%, rgba(42, 18, 2, 0.94) 100%);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-top: 1.5px solid rgba(255, 179, 0, 0.45);
-  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.25);
-  padding: 0.85rem 1.5rem;
-  transition: transform 0.3s ease;
+  background: linear-gradient(90deg, #1C0A00 0%, #2A1002 50%, #1C0A00 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 2.5px solid #FFB300;
+  box-shadow: 0 -10px 35px rgba(0, 0, 0, 0.45);
+  padding: 1.1rem 1.5rem;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 640px) {
+  .sticky-bottom-bar {
+    padding: 1.25rem 2.5rem;
+    min-height: 86px;
+  }
 }
 
 /* Floating WhatsApp Button (Matching reference site) */
