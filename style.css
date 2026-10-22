@@ -350,10 +350,10 @@ h1, h2, h3, h4, .font-heading {
   background: linear-gradient(90deg, #1C0A00 0%, #2A1002 50%, #1C0A00 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-top: 2.5px solid #FFB300;
+  border-top: 2px solid #FFB300;
   box-shadow: 0 -10px 35px rgba(0, 0, 0, 0.45);
-  padding: 1.1rem 1.5rem;
-  min-height: 76px;
+  padding: 0.85rem 1rem;
+  min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -362,8 +362,8 @@ h1, h2, h3, h4, .font-heading {
 
 @media (min-width: 640px) {
   .sticky-bottom-bar {
-    padding: 1.25rem 2.5rem;
-    min-height: 86px;
+    padding: 1.15rem 2.25rem;
+    min-height: 84px;
   }
 }
 
