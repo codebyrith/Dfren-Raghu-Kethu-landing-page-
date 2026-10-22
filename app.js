@@ -245,11 +245,11 @@ function renderRasiButtons() {
       onclick="selectRasi('${r.id}')" 
       id="btn-rasi-${r.id}"
       class="rasi-grid-btn ${r.id === selectedRasiId ? 'active' : ''}">
-      <span class="text-sm sm:text-base leading-none mb-0.5">${r.symbol}</span>
-      <span class="tamil-text text-xs sm:text-sm font-bold text-[#2A1202] leading-tight block">
+      <span class="rasi-icon-badge">${r.symbol}</span>
+      <span class="tamil-text text-[11px] sm:text-xs font-bold text-[#2A1202] leading-tight block rasi-name-tamil">
         ${r.tamilName}
       </span>
-      <span class="text-[9px] sm:text-[10px] font-medium text-stone-600 block leading-none mt-0.5">
+      <span class="text-[9px] sm:text-[10px] font-semibold text-stone-600 block leading-none mt-0.5 rasi-name-eng">
         ${r.name.split(' ')[0]}
       </span>
     </button>
