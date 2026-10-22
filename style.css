@@ -342,27 +342,59 @@ h1, h2, h3, h4, .font-heading {
 }
 
 /* Floating WhatsApp Button (Matching reference site) */
+/* Floating Call Button (Red format) */
+.floating-call-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 50%, #B91C1C 100%);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.45), 0 0 0 2px rgba(255, 255, 255, 0.9);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  cursor: pointer;
+  animation: call-pulse 2.2s infinite;
+}
+
+.floating-call-btn:hover {
+  transform: scale(1.1) rotate(-8deg);
+  box-shadow: 0 12px 28px rgba(220, 38, 38, 0.65), 0 0 0 3px #FFFFFF;
+}
+
+@keyframes call-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7), 0 6px 18px rgba(220, 38, 38, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0), 0 6px 18px rgba(220, 38, 38, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0), 0 6px 18px rgba(220, 38, 38, 0.4);
+  }
+}
+
+/* Floating WhatsApp Button (Green original format) */
 .floating-whatsapp {
-  position: fixed;
-  bottom: 5.5rem;
-  right: 1.5rem;
-  z-index: 55;
-  width: 58px;
-  height: 58px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: #25D366;
   color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45), 0 0 0 2px rgba(255, 255, 255, 0.9);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .floating-whatsapp:hover {
   transform: scale(1.1) rotate(6deg);
-  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.7);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.65), 0 0 0 3px #FFFFFF;
 }
 
 /* Rasi Filter Tabs & Grid Cards */
@@ -425,27 +457,27 @@ h1, h2, h3, h4, .font-heading {
   background: linear-gradient(90deg, #FF5E00 0%, #FFA000 50%, #FFD54F 100%);
 }
 
-/* 3x4 Rasi Selector Button Grid (Matching User Reference Screenshot) */
+/* 3x4 Rasi Selector Button Grid (Small & Compact Format) */
 .rasi-grid-btn {
   background: #FFFFFF;
   border: 1.5px solid rgba(255, 160, 0, 0.35);
-  border-radius: 1rem;
-  padding: 0.85rem 0.5rem;
+  border-radius: 0.75rem;
+  padding: 0.45rem 0.25rem;
   text-align: center;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 72px;
+  min-height: 52px;
 }
 
 .rasi-grid-btn:hover {
   border-color: var(--orange-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(230, 81, 0, 0.18);
+  box-shadow: 0 6px 14px rgba(230, 81, 0, 0.16);
   background: #FFF9F5;
 }
 
@@ -453,8 +485,8 @@ h1, h2, h3, h4, .font-heading {
   background: linear-gradient(135deg, #FF5E00 0%, #FF8500 100%) !important;
   color: #FFFFFF !important;
   border-color: #FFD54F !important;
-  box-shadow: 0 8px 24px rgba(255, 94, 0, 0.45), 0 0 0 2px rgba(255, 213, 79, 0.6);
-  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(255, 94, 0, 0.4), 0 0 0 2px rgba(255, 213, 79, 0.6);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .rasi-grid-btn.active span {

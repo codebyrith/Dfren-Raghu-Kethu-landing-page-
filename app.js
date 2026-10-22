@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupDirectRazorpayLinks();
 });
 
-// Render the 3x4 Rasi Button Grid (Matching user's reference screenshot)
+// Render the 3x4 Rasi Button Grid (Small & Compact Matching User Reference Screenshot)
 function renderRasiButtons() {
   const container = document.getElementById("rasi-buttons-grid");
   if (!container) return;
@@ -245,11 +245,11 @@ function renderRasiButtons() {
       onclick="selectRasi('${r.id}')" 
       id="btn-rasi-${r.id}"
       class="rasi-grid-btn ${r.id === selectedRasiId ? 'active' : ''}">
-      <span class="text-xl sm:text-2xl mb-1">${r.symbol}</span>
-      <span class="tamil-text text-base sm:text-lg font-bold text-[#2A1202] leading-tight block">
+      <span class="text-sm sm:text-base leading-none mb-0.5">${r.symbol}</span>
+      <span class="tamil-text text-xs sm:text-sm font-bold text-[#2A1202] leading-tight block">
         ${r.tamilName}
       </span>
-      <span class="text-[11px] font-semibold text-stone-600 block mt-0.5">
+      <span class="text-[9px] sm:text-[10px] font-medium text-stone-600 block leading-none mt-0.5">
         ${r.name.split(' ')[0]}
       </span>
     </button>
