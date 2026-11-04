@@ -1,0 +1,707 @@
+/*
+Theme Name: Custom Antigravity Theme
+Theme URI: https://new-ragu-kethu.vercel.app/
+Author: Developer
+Author URI: https://new-ragu-kethu.vercel.app/
+Description: Complete, production-ready WordPress classic theme converted from the Rahu Ketu Peyarchi 2026 landing page for Dr. Kalpana Srikaanth.
+Version: 1.0.0
+Requires at least: 5.8
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: custom-antigravity-theme
+Tags: responsive-layout, custom-colors, landing-page, translation-ready
+*/
+
+/* ========================================================
+   RAHU KETU PEYARCHI - HIGH CONVERTING VEDIC ASTROLOGY LANDING PAGE
+   Theme: Sacred Divine Orange, Radiant Saffron, Temple Amber & Gold
+   Reference Model: https://gemstones.kalpanasrikaanthastrologer.com/
+   ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Outfit:wght@300;400;500;600;700;800&family=Mukta+Malar:wght@400;600;700;800&display=swap');
+
+:root {
+  /* Rich Orange & Sacred Saffron Theme Palette */
+  --orange-primary: #FF5E00;
+  --orange-deep: #E65100;
+  --orange-dark: #BF360C;
+  --orange-radiant: #FF7A00;
+  --orange-light: #FF9E40;
+  --orange-soft-bg: #FFF4EB;
+  --orange-cream: #FFF8F2;
+  
+  --amber-gold: #FFB300;
+  --temple-gold: #FFC107;
+  --bright-gold: #FFD54F;
+  --gold-glow: rgba(255, 179, 0, 0.45);
+  
+  /* Text Colors - Deep rich brown & dark chocolate for crisp contrast against orange */
+  --text-dark: #2A1202;
+  --text-brown: #3D1C06;
+  --text-muted: #6E3B1B;
+  --text-light-brown: #8D5430;
+  --text-white: #FFFFFF;
+
+  /* Card Surfaces */
+  --card-glass: rgba(255, 252, 248, 0.95);
+  --card-glass-hover: #FFFFFF;
+  --card-border: rgba(230, 81, 0, 0.18);
+  --card-border-gold: rgba(255, 179, 0, 0.45);
+  --card-shadow: 0 10px 30px -5px rgba(191, 54, 12, 0.14), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 20px 40px -8px rgba(191, 54, 12, 0.25), 0 8px 16px rgba(0, 0, 0, 0.08);
+
+  /* Orange Backgrounds */
+  --bg-gradient: linear-gradient(135deg, #FF6600 0%, #FF8500 35%, #FFA000 70%, #FF6600 100%);
+  --bg-soft-gradient: linear-gradient(180deg, #FFF6EE 0%, #FFEEDB 100%);
+
+  --font-heading: 'Montserrat', sans-serif;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-tamil: 'Mukta Malar', 'Outfit', sans-serif;
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Sacred Geometric Watermark on Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(255, 220, 150, 0.25) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23B72C00' fill-opacity='0.035'%3E%3Cpath d='M30 0l30 30-30 30-30-30z'/%3E%3Ccircle cx='30' cy='30' r='12' fill='none' stroke='%23B72C00' stroke-width='1' stroke-opacity='0.04'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-heading) !important;
+  color: var(--text-dark);
+  letter-spacing: -0.015em;
+  font-weight: 700;
+}
+
+.tamil-text {
+  font-family: var(--font-tamil), sans-serif;
+}
+
+/* ========================================================
+   HIGHLIGHTED CTA BUTTON - THE FOCAL POINT
+   Vibrant glowing orange/gold, subtle pulsing light effect
+   ======================================================== */
+.btn-highlighted-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #FF4500 0%, #FF6A00 50%, #FF8C00 100%);
+  color: #FFFFFF !important;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  border: 2px solid #FFD54F;
+  box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7), 0 8px 24px rgba(230, 81, 0, 0.45);
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: pulse-orange 2.4s infinite;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn-highlighted-cta:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: linear-gradient(135deg, #FF5500 0%, #FF7700 50%, #FFA000 100%);
+  box-shadow: 0 0 30px rgba(255, 110, 0, 0.75), 0 12px 30px rgba(230, 81, 0, 0.55);
+  border-color: #FFFFFF;
+}
+
+.btn-highlighted-cta:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.btn-highlighted-cta::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: rotate(25deg);
+  animation: sheen-glow 3.5s infinite;
+}
+
+@keyframes pulse-orange {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7), 0 6px 20px rgba(230, 81, 0, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(255, 69, 0, 0), 0 8px 24px rgba(230, 81, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 69, 0, 0), 0 6px 20px rgba(230, 81, 0, 0.4);
+  }
+}
+
+@keyframes sheen-glow {
+  0% { left: -70%; }
+  25% { left: 140%; }
+  100% { left: 140%; }
+}
+
+/* Secondary Button */
+.btn-orange-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  color: var(--orange-deep) !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 2px solid var(--orange-primary);
+  box-shadow: 0 4px 14px rgba(230, 81, 0, 0.15);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-orange-outline:hover {
+  background: var(--orange-soft-bg);
+  color: var(--orange-dark) !important;
+  border-color: var(--orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 81, 0, 0.25);
+}
+
+/* ========================================================
+   CARD STYLES (Matching Reference Site Glass & Soft Aesthetic)
+   ======================================================== */
+.landing-card {
+  background: var(--card-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border-gold);
+  border-radius: 1.25rem;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.landing-card:hover {
+  background: var(--card-glass-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--orange-primary);
+}
+
+/* 6-Card Feature Pill (Exact match to reference site right-side hero cards) */
+.stat-feature-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 246, 235, 0.92) 100%);
+  border: 1px solid rgba(255, 179, 0, 0.4);
+  border-radius: 1.1rem;
+  padding: 1.15rem 1.4rem;
+  box-shadow: 0 8px 24px -4px rgba(230, 81, 0, 0.12);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-feature-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  border-color: var(--orange-primary);
+  box-shadow: 0 12px 28px -4px rgba(230, 81, 0, 0.22);
+}
+
+.stat-feature-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #FF9100 0%, #FF3D00 100%);
+  border-radius: 4px 0 0 4px;
+}
+
+
+/* Video Showcase Card */
+.video-media-card {
+  background: #FFFFFF;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 160, 0, 0.35);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.video-media-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--orange-primary);
+  box-shadow: 0 18px 36px rgba(230, 81, 0, 0.22);
+}
+
+/* Google Rating Badge Card (Exact match to user reference screenshot Image 2) */
+.google-badge-card {
+  background: #FFFFFF;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+}
+
+.google-badge-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(230, 81, 0, 0.12);
+  border-color: rgba(255, 160, 0, 0.4);
+}
+
+/* Google Review Card (Matching reference site) */
+.google-review-card {
+  background: #FFFFFF;
+  border-radius: 1.15rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+}
+
+.google-review-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 160, 0, 0.6);
+  box-shadow: 0 10px 25px rgba(230, 81, 0, 0.14);
+}
+
+/* Media Logo Container */
+.media-logo-wrapper {
+  background: #FFFFFF;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 179, 0, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  height: 80px;
+}
+
+.media-logo-wrapper:hover {
+  transform: translateY(-3px) scale(1.05);
+  border-color: var(--orange-primary);
+  box-shadow: 0 8px 20px rgba(230, 81, 0, 0.18);
+}
+
+.media-logo-wrapper img {
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Sticky Bottom Bar (Full-Width Button) */
+.sticky-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: linear-gradient(90deg, #1C0A00 0%, #2A1002 50%, #1C0A00 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 2px solid #FFB300;
+  box-shadow: 0 -10px 35px rgba(0, 0, 0, 0.45);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 640px) {
+  .sticky-bottom-bar {
+    padding: 1rem 2rem;
+  }
+}
+
+#sticky-book-btn {
+  width: 100%;
+  padding-top: 0.95rem;
+  padding-bottom: 0.95rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+}
+
+@media (min-width: 640px) {
+  #sticky-book-btn {
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* Floating WhatsApp Button (Matching reference site) */
+/* Floating Call Button (#FD1C36) */
+.floating-call-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #FD1C36;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(253, 28, 54, 0.45), 0 0 0 2px rgba(255, 255, 255, 0.9);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  cursor: pointer;
+  animation: call-pulse 2.2s infinite;
+}
+
+.floating-call-btn:hover {
+  background: #e0122b;
+  transform: scale(1.1) rotate(-8deg);
+  box-shadow: 0 12px 28px rgba(253, 28, 54, 0.65), 0 0 0 3px #FFFFFF;
+}
+
+@keyframes call-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(253, 28, 54, 0.7), 0 6px 18px rgba(253, 28, 54, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(253, 28, 54, 0), 0 6px 18px rgba(253, 28, 54, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(253, 28, 54, 0), 0 6px 18px rgba(253, 28, 54, 0.4);
+  }
+}
+
+/* Floating WhatsApp Button (Green original format) */
+.floating-whatsapp {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45), 0 0 0 2px rgba(255, 255, 255, 0.9);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1) rotate(6deg);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.65), 0 0 0 3px #FFFFFF;
+}
+
+/* Rasi Filter Tabs & Grid Cards */
+.rasi-filter-tab {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid rgba(255, 160, 0, 0.4);
+  color: var(--text-dark);
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.55rem 1.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.rasi-filter-tab:hover {
+  background: #FFFFFF;
+  border-color: var(--orange-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(230, 81, 0, 0.2);
+}
+
+.rasi-filter-tab.active {
+  background: linear-gradient(135deg, #FF5E00 0%, #FF8C00 100%);
+  color: #FFFFFF !important;
+  border-color: #FFD54F;
+  box-shadow: 0 4px 18px rgba(255, 94, 0, 0.45);
+}
+
+/* Rasi Grid Card */
+.rasi-grid-card {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1.5px solid rgba(255, 160, 0, 0.35);
+  border-radius: 1.25rem;
+  padding: 1.35rem;
+  box-shadow: 0 8px 24px -4px rgba(191, 54, 12, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.rasi-grid-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange-primary);
+  box-shadow: 0 16px 32px -6px rgba(230, 81, 0, 0.22);
+  background: #FFFFFF;
+}
+
+.rasi-grid-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #FF5E00 0%, #FFA000 50%, #FFD54F 100%);
+}
+
+/* 3x4 Rasi Selector Button Grid (Small & Compact Format matching user request) */
+.rasi-grid-btn {
+  background: #FFFFFF;
+  border: 1.2px solid rgba(255, 160, 0, 0.35);
+  border-radius: 0.75rem;
+  padding: 0.4rem 0.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+}
+
+.rasi-grid-btn:hover {
+  border-color: var(--orange-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 81, 0, 0.16);
+  background: #FFF9F5;
+}
+
+.rasi-grid-btn .rasi-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 0.4rem;
+  background: #F3E8FF;
+  color: #7E22CE;
+  font-size: 0.8rem;
+  line-height: 1;
+  margin-bottom: 2px;
+  transition: all 0.2s ease;
+}
+
+.rasi-grid-btn.active {
+  background: linear-gradient(135deg, #FF5E00 0%, #FF8500 100%) !important;
+  color: #FFFFFF !important;
+  border-color: #FFD54F !important;
+  box-shadow: 0 4px 14px rgba(255, 94, 0, 0.4), 0 0 0 1.5px rgba(255, 213, 79, 0.6);
+  transform: translateY(-1px) scale(1.02);
+}
+
+.rasi-grid-btn.active .rasi-icon-badge {
+  background: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+}
+
+.rasi-grid-btn.active .rasi-name-tamil,
+.rasi-grid-btn.active .rasi-name-eng,
+.rasi-grid-btn.active span {
+  color: #FFFFFF !important;
+}
+
+/* Rasi Selector Pills (Legacy Support) */
+.rasi-pill-btn {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(255, 160, 0, 0.35);
+  color: var(--text-dark);
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.rasi-pill-btn:hover {
+  background: #FFFFFF;
+  border-color: var(--orange-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 81, 0, 0.15);
+}
+
+.rasi-pill-btn.active {
+  background: linear-gradient(135deg, #FF6A00 0%, #FF8C00 100%);
+  color: #FFFFFF !important;
+  border-color: #FFD54F;
+  box-shadow: 0 4px 16px rgba(255, 106, 0, 0.4);
+}
+
+/* FAQ Accordion */
+.faq-item {
+  background: #FFFFFF;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 160, 0, 0.25);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+
+.faq-item:hover {
+  border-color: var(--orange-primary);
+}
+
+.faq-button {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+}
+
+.faq-content {
+  padding: 0 1.5rem 1.25rem 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Modal Backdrop & Container */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 10, 2, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box {
+  background: #FFFFFF;
+  border-radius: 1.5rem;
+  border: 2px solid #FFD54F;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-box {
+  transform: scale(1);
+}
+
+/* WhatsApp Confirmation CTA Button */
+.btn-whatsapp-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #25D366 0%, #1EBE5D 50%, #128C7E 100%);
+  color: #FFFFFF !important;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.015em;
+  padding: 0.95rem 2rem;
+  border-radius: 9999px;
+  border: 2px solid #A7F3D0;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.btn-whatsapp-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(135deg, #28E06D 0%, #20CC64 50%, #0F9E8E 100%);
+  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.6), 0 0 20px rgba(37, 211, 102, 0.4);
+}
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF4EB;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF9E40;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6600;
+}
