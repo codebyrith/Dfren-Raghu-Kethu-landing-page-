@@ -16,14 +16,14 @@ if (!defined('ABSPATH')) {
 
     <?php if (!is_page_template('page-thank-you.php') && !is_page('thank-you') && !is_page('booking-confirmed')) : ?>
     <!-- ========================================================
-         STICKY FOOTER - FULL-WIDTH BOOK CONSULTATION BUTTON
+         STICKY FOOTER - CENTERED BOOK CONSULTATION BUTTON WITH EXPANDED BROWN CONTAINER
          ======================================================== -->
     <div class="sticky-bottom-bar flex items-center justify-center">
-      <!-- Full-Width Highlighted CTA Button triggering Consultation Booking Modal -->
+      <!-- Centered Highlighted CTA Button with Expanded Brown Bar Margin/Padding -->
       <button 
         type="button" 
         onclick="openBookingModal('Sticky Bottom Bar')"
-        class="btn-highlighted-cta w-full text-base sm:text-lg lg:text-xl py-3.5 sm:py-4 shadow-2xl flex items-center justify-center gap-2.5 font-extrabold tracking-wide"
+        class="btn-highlighted-cta w-full max-w-md sm:max-w-lg text-base sm:text-lg py-3.5 sm:py-4 shadow-2xl flex items-center justify-center gap-2.5 font-extrabold tracking-wide mx-auto"
         id="sticky-book-btn">
         <span><?php esc_html_e('Book Consultation', 'custom-antigravity-theme'); ?></span>
         <svg class="w-5 h-5 sm:w-6 sm:h-6 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,7 +35,7 @@ if (!defined('ABSPATH')) {
     <!-- ========================================================
          FLOATING ACTION BUTTONS: RED CALL ICON & GREEN WHATSAPP ICON
          ======================================================== -->
-    <div class="fixed bottom-28 sm:bottom-32 right-3 sm:right-6 z-50 flex flex-col items-center gap-2.5">
+    <div class="fixed bottom-32 sm:bottom-36 right-3 sm:right-6 z-50 flex flex-col items-center gap-2.5">
       
       <!-- Red Floating Phone Call Button (Above WhatsApp) -->
       <a 

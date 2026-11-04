@@ -25,8 +25,10 @@ $theme_uri = get_template_directory_uri();
           </div>
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#2A1202] leading-snug sm:leading-tight mb-2.5 tracking-tight">
             <span><?php esc_html_e('Raghu ketu peyarchi is a changing sign for a horoscope.', 'custom-antigravity-theme'); ?></span>
-            <span class="block tamil-text text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#7C2D12] mt-2">
-              உங்க ஜாதகத்துக்கு இந்த ராகு கேது பயிற்சி எப்படி இருக்குன்னு தெரிஞ்சுக்கணுமா?
+            <span class="block tamil-text text-[17px] sm:text-2xl lg:text-3xl font-extrabold text-[#7C2D12] mt-2.5 leading-snug">
+              <span class="block sm:inline">உங்க ஜாதகத்துக்கு இந்த ராகு</span>
+              <span class="block sm:inline">கேது பயிற்சி எப்படி</span>
+              <span class="block sm:inline whitespace-nowrap">இருக்குன்னு தெரிஞ்சுக்கணுமா?</span>
             </span>
           </h2>
           <p class="text-sm sm:text-base lg:text-lg text-[#4A2004] font-medium max-w-3xl mx-auto leading-relaxed">
