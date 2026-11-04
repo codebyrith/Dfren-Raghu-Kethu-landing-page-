@@ -493,7 +493,7 @@ function setupBookingButtons() {
   });
 }
 
-// FAQ Accordion Toggle - Exactly 2 items
+// FAQ Accordion Toggle
 function toggleFaq(index) {
   const content = document.getElementById(`faq-content-${index}`);
   const icon = document.getElementById(`faq-icon-${index}`);
@@ -502,16 +502,12 @@ function toggleFaq(index) {
 
   const isHidden = content.classList.contains("hidden");
 
-  // Close both FAQs (1 and 2)
-  for (let i = 1; i <= 2; i++) {
-    const c = document.getElementById(`faq-content-${i}`);
-    const ic = document.getElementById(`faq-icon-${i}`);
-    if (c) c.classList.add("hidden");
-    if (ic) {
-      ic.textContent = "+";
-      ic.classList.remove("rotate-45");
-    }
-  }
+  // Close all FAQs dynamically
+  document.querySelectorAll(".faq-content").forEach((c) => c.classList.add("hidden"));
+  document.querySelectorAll("[id^='faq-icon-']").forEach((ic) => {
+    ic.textContent = "+";
+    ic.classList.remove("rotate-45");
+  });
 
   if (isHidden) {
     content.classList.remove("hidden");
