@@ -139,3 +139,4 @@ add_action('wp_enqueue_scripts', 'custom_antigravity_theme_scripts');
 function custom_antigravity_asset($relative_path) {
     return esc_url(get_template_directory_uri() . '/assets/' . ltrim($relative_path, '/'));
 }
+

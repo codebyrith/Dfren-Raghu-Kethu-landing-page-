@@ -23,3 +23,4 @@ if (!defined('ABSPATH')) {
 
   <div class="content-wrapper min-h-screen flex flex-col pb-36 sm:pb-44">
     <main class="flex-grow">
+

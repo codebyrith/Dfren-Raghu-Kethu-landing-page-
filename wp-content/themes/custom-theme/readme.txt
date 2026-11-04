@@ -36,3 +36,4 @@ Custom Antigravity Theme converts the high-converting Vedic astrology consultati
 - `page-thank-you.php`: Dedicated Thank You confirmation template.
 - `assets/js/main.js`: Vanilla JS for modal, form, and accordion behaviors.
 - `assets/images/`: Authenticated client consultation and media images.
+

@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
 get_header();
 ?>
 
-  <div class="content-wrapper flex-grow flex flex-col justify-center items-center py-10 px-4 sm:px-6 lg:px-8">
+  <div class="flex-grow flex flex-col justify-center items-center py-10 px-4 sm:px-6 lg:px-8">
     
     <!-- Header Brand Pill -->
     <div class="mb-6 text-center">
@@ -125,3 +125,4 @@ get_header();
 
 <?php
 get_footer();
+
