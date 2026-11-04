@@ -21,6 +21,6 @@ if (!defined('ABSPATH')) {
 <body <?php body_class('text-stone-900 antialiased selection:bg-orange-300 selection:text-orange-950'); ?>>
 <?php wp_body_open(); ?>
 
-  <div class="content-wrapper min-h-screen flex flex-col pb-40 sm:pb-48">
+  <div class="content-wrapper min-h-screen flex flex-col pb-48 sm:pb-56">
     <main class="flex-grow">
 

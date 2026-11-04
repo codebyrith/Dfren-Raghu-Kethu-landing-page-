@@ -23,7 +23,7 @@ if (!defined('ABSPATH')) {
       <button 
         type="button" 
         onclick="openBookingModal('Sticky Bottom Bar')"
-        class="btn-highlighted-cta w-full max-w-md sm:max-w-lg text-base sm:text-lg py-3.5 sm:py-4 shadow-2xl flex items-center justify-center gap-2.5 font-extrabold tracking-wide mx-auto"
+        class="btn-highlighted-cta w-full max-w-sm sm:max-w-md text-base sm:text-lg py-3.5 sm:py-4 shadow-2xl flex items-center justify-center gap-2.5 font-extrabold tracking-wide mx-auto"
         id="sticky-book-btn">
         <span><?php esc_html_e('Book Consultation', 'custom-antigravity-theme'); ?></span>
         <svg class="w-5 h-5 sm:w-6 sm:h-6 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,7 +35,7 @@ if (!defined('ABSPATH')) {
     <!-- ========================================================
          FLOATING ACTION BUTTONS: RED CALL ICON & GREEN WHATSAPP ICON
          ======================================================== -->
-    <div class="fixed bottom-32 sm:bottom-36 right-3 sm:right-6 z-50 flex flex-col items-center gap-2.5">
+    <div class="fixed bottom-36 sm:bottom-44 right-3 sm:right-6 z-50 flex flex-col items-center gap-2.5">
       
       <!-- Red Floating Phone Call Button (Above WhatsApp) -->
       <a 
