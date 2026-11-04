@@ -1,5 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "framework": null
+  "framework": null,
+  "rewrites": [
+    { "source": "/thank-you", "destination": "/thank-you.html" },
+    { "source": "/booking-confirmed", "destination": "/thank-you.html" }
+  ]
 }

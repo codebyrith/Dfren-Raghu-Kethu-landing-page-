@@ -229,10 +229,32 @@ let selectedRasiId = "mesham";
 
 // Initialize on page load
 document.addEventListener("DOMContentLoaded", () => {
+  checkPaymentCallbackRedirect();
   renderRasiButtons();
   selectRasi("mesham");
-  setupDirectRazorpayLinks();
+  setupBookingButtons();
+  
+  // Close modal when pressing Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeBookingModal();
+  });
 });
+
+// Check if returning from Razorpay or external payment with success parameters
+function checkPaymentCallbackRedirect() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    if (
+      params.has("razorpay_payment_id") || 
+      params.has("payment_id") || 
+      params.has("razorpay_payment_link_id") ||
+      params.get("status") === "success" || 
+      params.get("payment") === "success"
+    ) {
+      window.location.href = "/thank-you" + window.location.search;
+    }
+  } catch(e) {}
+}
 
 // Render the 3x4 Rasi Button Grid (Small & Compact Matching User Reference Screenshot)
 function renderRasiButtons() {
@@ -363,33 +385,115 @@ function selectRasi(id) {
       </div>
     </div>
 
-    <!-- Direct Razorpay CTA Button -->
+    <!-- Direct Consultation Modal CTA Button -->
     <div class="text-center pt-2">
-      <a 
-        href="${RAZORPAY_URL}" 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      <button 
+        type="button" 
+        onclick="openBookingModal('Rasi Card ${r.name}')" 
         class="btn-highlighted-cta text-base sm:text-lg px-8 py-3.5 shadow-xl inline-flex items-center">
         <span>Book Personal Consultation for ${r.tamilName} (${r.name.split(' ')[0]})</span>
         <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
         </svg>
-      </a>
+      </button>
     </div>
   `;
 }
 
-// Ensure all "Book Consultation" triggers go directly to Razorpay Gateway
-function setupDirectRazorpayLinks() {
-  document.querySelectorAll("[data-razorpay]").forEach(btn => {
+// Open Consultation Booking Modal
+function openBookingModal(source = "General Booking") {
+  const modal = document.getElementById("booking-modal");
+  if (!modal) return;
+  modal.classList.add("active");
+  document.body.style.overflow = "hidden";
+
+  // Pre-fill fields if user booked previously
+  try {
+    const raw = sessionStorage.getItem("peyrachi_booking") || localStorage.getItem("peyrachi_booking");
+    if (raw) {
+      const d = JSON.parse(raw);
+      const nameInput = document.getElementById("form-name");
+      const phoneInput = document.getElementById("form-phone");
+      const dobInput = document.getElementById("form-dob");
+      const rasiInput = document.getElementById("form-rasi");
+
+      if (nameInput && d.name && !nameInput.value) nameInput.value = d.name;
+      if (phoneInput && d.phone && !phoneInput.value) phoneInput.value = d.phone;
+      if (dobInput && d.dob && !dobInput.value) dobInput.value = d.dob;
+      if (rasiInput && d.rasi && !rasiInput.value) rasiInput.value = d.rasi;
+    }
+  } catch(e) {}
+}
+
+// Close Consultation Booking Modal
+function closeBookingModal() {
+  const modal = document.getElementById("booking-modal");
+  if (!modal) return;
+  modal.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+// Modal Backdrop Click Handler
+function handleModalBackdropClick(event) {
+  if (event.target.id === "booking-modal") {
+    closeBookingModal();
+  }
+}
+
+// Handle Form Submission, Storage, and Payment Redirect
+function handleBookingSubmit(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("form-name")?.value.trim() || "";
+  const phone = document.getElementById("form-phone")?.value.trim() || "";
+  const dob = document.getElementById("form-dob")?.value || "";
+  const rasi = document.getElementById("form-rasi")?.value || "";
+
+  if (!name || !phone || !dob) {
+    alert("Please fill in your Name, Phone Number, and Date of Birth.");
+    return;
+  }
+
+  const bookingData = {
+    name,
+    phone,
+    dob,
+    rasi,
+    timestamp: new Date().toISOString(),
+    consultation: "Rahu Ketu Peyarchi Consultation + Bonus Lifetime Gemstone Prediction"
+  };
+
+  try {
+    sessionStorage.setItem("peyrachi_booking", JSON.stringify(bookingData));
+    localStorage.setItem("peyrachi_booking", JSON.stringify(bookingData));
+  } catch (e) {}
+
+  const submitBtn = document.getElementById("submit-booking-btn");
+  if (submitBtn) {
+    submitBtn.innerHTML = `<span>Redirecting to Payment...</span>`;
+    submitBtn.disabled = true;
+  }
+
+  // Open Razorpay Payment Gateway in a new tab
+  window.open(RAZORPAY_URL, "_blank");
+
+  // Automatically route to dedicated Thank You / Confirmation page
+  setTimeout(() => {
+    window.location.href = "/thank-you";
+  }, 400);
+}
+
+// Wire up booking buttons with data-book-consultation attribute
+function setupBookingButtons() {
+  document.querySelectorAll("[data-book-consultation]").forEach(btn => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
-      window.open(RAZORPAY_URL, "_blank");
+      openBookingModal(btn.getAttribute("data-book-consultation") || "Button Click");
     });
   });
 }
 
-// FAQ Accordion Toggle
+// FAQ Accordion Toggle - Exactly 2 items
 function toggleFaq(index) {
   const content = document.getElementById(`faq-content-${index}`);
   const icon = document.getElementById(`faq-icon-${index}`);
@@ -398,8 +502,8 @@ function toggleFaq(index) {
 
   const isHidden = content.classList.contains("hidden");
 
-  // Close all other FAQs
-  for (let i = 1; i <= 5; i++) {
+  // Close both FAQs (1 and 2)
+  for (let i = 1; i <= 2; i++) {
     const c = document.getElementById(`faq-content-${i}`);
     const ic = document.getElementById(`faq-icon-${i}`);
     if (c) c.classList.add("hidden");
@@ -415,3 +519,4 @@ function toggleFaq(index) {
     icon.classList.add("rotate-45");
   }
 }
+

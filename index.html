@@ -55,19 +55,40 @@
     <main class="flex-grow">
 
       <!-- ========================================================
-           1. HERO SECTION (Initial Viewport with Starting Heading)
-           - Top header removed
-           - Consultation button removed from hero
-           - Starting Heading: 'Find Your Perfect Rahu Ketu Peyarchi Guidance'
-           - Primary image visible in initial viewport
-           - Tight bottom padding to eliminate extra gap
+           1. RAHU KETU PEYARCHI CONSULTATION BANNER (Appears First)
+           - Labeled badge "Raghu Kethu Peyarchi Consultation + Bonus Life Time Gemstone Prediction"
+           - Direct booking CTA button has been removed from this card section
            ======================================================== -->
-      <section id="hero" class="relative pt-6 sm:pt-8 pb-3 sm:pb-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section class="pt-6 sm:pt-8 pb-4 sm:pb-6 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div class="landing-card p-6 sm:p-9 border-2 border-orange-300 text-center bg-gradient-to-r from-orange-100/90 via-amber-50 to-orange-100/90 shadow-xl rounded-3xl">
+          <div class="inline-flex items-center justify-center text-center px-4 sm:px-6 py-1.5 sm:py-2 rounded-full bg-white/95 border border-orange-300 text-[#4A2004] text-xs sm:text-sm font-medium shadow-sm mb-3.5">
+            <span>Raghu Kethu Peyarchi Consultation + <strong class="font-black text-[#2A1202]">Bonus</strong> Life Time Gemstone Prediction</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#2A1202] leading-snug sm:leading-tight mb-2.5 tracking-tight">
+            <span>Raghu ketu peyarchi is a changing sign for a horoscope.</span>
+            <span class="block tamil-text text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#7C2D12] mt-2">
+              உங்க ஜாதகத்துக்கு இந்த ராகு கேது பயிற்சி எப்படி இருக்குன்னு தெரிஞ்சுக்கணுமா?
+            </span>
+          </h2>
+          <p class="text-sm sm:text-base lg:text-lg text-[#4A2004] font-medium max-w-3xl mx-auto leading-relaxed">
+            The same transit gives a different result to every birth chart. Get your personal Peyarchi reading and Gemstone guidance from Dr. Kalpana Srikaanth, with 32+ years of experience and 1 lakh+ clients guided.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- ========================================================
+           2. VEDIC TRANSIT ANALYSIS 2026 HERO SECTION (Appears Second)
+           - Labeled badge "VEDIC TRANSIT ANALYSIS 2026 • ராகு கேது பெயர்ச்சி"
+           - Subtitle "Every birth chart experiences Rahu and Ketu differently. Choose your Janma Rasi below..."
+           - Relocated "Book Consultation Directly →" CTA button placed below intro description
+           ======================================================== -->
+      <section id="hero" class="relative pt-3 sm:pt-4 pb-4 sm:pb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         
-        <!-- Big Centered Starting Headline (Initial Viewport Focus - Swapped with 2nd Image) -->
-        <div class="text-center max-w-4xl mx-auto mb-5 sm:mb-6">
+        <!-- Big Centered Starting Headline -->
+        <div class="text-center max-w-4xl mx-auto mb-6 sm:mb-8">
           
-          <!-- Top Pill Badge (from 2nd image) -->
+          <!-- Top Pill Badge -->
           <div class="inline-flex items-center gap-2 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full bg-white/95 border border-orange-300 text-orange-950 font-bold text-xs sm:text-sm uppercase tracking-wider mb-3 sm:mb-3.5 shadow-sm">
             <span class="w-2.5 h-2.5 rounded-full bg-orange-600 animate-ping"></span>
             <span>VEDIC TRANSIT ANALYSIS 2026 • ராகு கேது பெயர்ச்சி</span>
@@ -80,9 +101,23 @@
             </span>
           </h1>
           
-          <p class="text-sm sm:text-base lg:text-lg text-[#4A2004] font-medium max-w-3xl mx-auto leading-relaxed">
+          <p class="text-sm sm:text-base lg:text-lg text-[#4A2004] font-medium max-w-3xl mx-auto leading-relaxed mb-5">
             Every birth chart experiences Rahu and Ketu differently. Choose your Janma Rasi below to instantly view house transit placements, career, finance insights, and remedies.
           </p>
+
+          <!-- Relocated 'Book Consultation Directly →' CTA Button -->
+          <div class="pt-1 text-center">
+            <button 
+              type="button" 
+              onclick="openBookingModal('Hero Section Direct Booking')"
+              class="btn-highlighted-cta text-sm sm:text-base px-7 sm:px-10 py-3 sm:py-3.5 shadow-xl inline-flex items-center gap-2"
+              id="hero-book-btn">
+              <span>Book Consultation Directly</span>
+              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </button>
+          </div>
         </div>
 
         <!-- 2-Column Hero Body (Photo Left, 6 Rounded Cards Right) Visible in Initial Viewport -->
@@ -287,16 +322,15 @@
 
         <!-- Consultation Booking CTA Button -->
         <div class="text-center pt-8">
-          <a 
-            href="https://rzp.io/rzp/Y6bhLqh" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <button 
+            type="button" 
+            onclick="openBookingModal('Benefits Section Booking')" 
             class="btn-highlighted-cta text-sm sm:text-base px-8 sm:px-11 py-3 sm:py-3.5 shadow-2xl inline-flex items-center gap-2">
             <span>Book Your Personal Consultation</span>
             <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
             </svg>
-          </a>
+          </button>
         </div>
       </section>
 
@@ -463,114 +497,7 @@
       </section>
 
 
-      <!-- ========================================================
-           4. KEY GUIDANCE & REMEDY PILLARS (Why Choose Us Feature Cards)
-           - 6 Pillars: Pariharam, Sarpa Dosha, Temple Archana, Gemstone, Metal/Finger, Muhurtham
-           - Highlighted CTA Button directly to Razorpay Gateway
-           ======================================================== -->
-      <section class="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto mb-7 sm:mb-9">
-          <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-orange-800 bg-orange-100 border border-orange-300 px-3.5 py-1 rounded-full inline-block mb-2.5">
-            Key Guidance Pillars • சிறப்பம்சங்கள்
-          </span>
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#2A1202] mb-2">
-            Personalised Vedic Guidance & Remedy Pillars
-          </h2>
-          <p class="text-xs sm:text-sm md:text-base text-[#4A2004] font-medium leading-relaxed">
-            Every consultation is personalized to unlock positive transit blessings and dissolve planetary obstacles.
-          </p>
-        </div>
 
-        <!-- 6 Feature Cards Responsive Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-6xl mx-auto">
-          <!-- Feature 1 -->
-          <div class="section2-feature-card">
-            <div class="w-9 h-9 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 mb-2 font-bold text-sm">
-              01
-            </div>
-            <h3 class="font-heading font-bold text-base sm:text-lg text-[#2A1202] mb-0.5">Right Pariharam for You</h3>
-            <p class="text-xs sm:text-sm text-[#5A2805] leading-relaxed">We suggest the exact Vedic transit remedy that suits your Lagna, Rasi, and active Dasa-Bukthi.</p>
-          </div>
-
-          <!-- Feature 2 -->
-          <div class="section2-feature-card">
-            <div class="w-9 h-9 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 mb-2 font-bold text-sm">
-              02
-            </div>
-            <h3 class="font-heading font-bold text-base sm:text-lg text-[#2A1202] mb-0.5">Sarpa & Shadow Planet Dosha Nivarana</h3>
-            <p class="text-xs sm:text-sm text-[#5A2805] leading-relaxed">Targeted remedies to eliminate marriage delays, business stalls, chronic anxiety, and recurring obstacles.</p>
-          </div>
-
-          <!-- Feature 3 -->
-          <div class="section2-feature-card">
-            <div class="w-9 h-9 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 mb-2 font-bold text-sm">
-              03
-            </div>
-            <h3 class="font-heading font-bold text-base sm:text-lg text-[#2A1202] mb-0.5">Sacred Temple Archana Guidance</h3>
-            <p class="text-xs sm:text-sm text-[#5A2805] leading-relaxed">Clear directions on visiting Thirunageswaram, Keezhaperumpallam, Srikalahasti, and Tirunallar for maximum grace.</p>
-          </div>
-
-          <!-- Feature 4 -->
-          <div class="section2-feature-card">
-            <div class="w-9 h-9 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 mb-2 font-bold text-sm">
-              04
-            </div>
-            <h3 class="font-heading font-bold text-base sm:text-lg text-[#2A1202] mb-0.5">Correct Gemstone (Gomed / Cat's Eye)</h3>
-            <p class="text-xs sm:text-sm text-[#5A2805] leading-relaxed">Guidance on whether Hessonite (Gomed) or Cat's Eye (Vaidooryam) suits your birth chart to amplify positive energies.</p>
-          </div>
-
-          <!-- Feature 5 -->
-          <div class="section2-feature-card">
-            <div class="w-9 h-9 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 mb-2 font-bold text-sm">
-              05
-            </div>
-            <h3 class="font-heading font-bold text-base sm:text-lg text-[#2A1202] mb-0.5">Suitable Metal & Finger to Wear</h3>
-            <p class="text-xs sm:text-sm text-[#5A2805] leading-relaxed">Clear advice on whether gemstones or yantras should be set in silver, gold, or panchdhatu, and on which finger.</p>
-          </div>
-
-          <!-- Feature 6 -->
-          <div class="section2-feature-card">
-            <div class="w-9 h-9 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 mb-2 font-bold text-sm">
-              06
-            </div>
-            <h3 class="font-heading font-bold text-base sm:text-lg text-[#2A1202] mb-0.5">Right Time & Peyarchi Muhurtham</h3>
-            <p class="text-xs sm:text-sm text-[#5A2805] leading-relaxed">Best day, planetary hora, and auspicious transit timing to wear gemstones and conduct pariharam for peak efficacy.</p>
-          </div>
-        </div>
-      </section>
-
-
-      <!-- ========================================================
-           RAHU KETU PEYARCHI CONSULTATION BANNER (Content from 1st Image)
-           ======================================================== -->
-      <section class="py-6 sm:py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div class="landing-card p-6 sm:p-9 border-2 border-orange-300 text-center bg-gradient-to-r from-orange-100/90 via-amber-50 to-orange-100/90 shadow-xl rounded-3xl">
-          <div class="inline-flex items-center justify-center text-center px-4 sm:px-6 py-1.5 sm:py-2 rounded-full bg-white/95 border border-orange-300 text-[#4A2004] text-xs sm:text-sm font-medium shadow-sm mb-3.5">
-            <span>Raghu Kethu Peyarchi Consultation + <strong class="font-black text-[#2A1202]">Bonus</strong> Life Time Gemstone Prediction</span>
-          </div>
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#2A1202] leading-snug sm:leading-tight mb-2.5 tracking-tight">
-            <span>Raghu ketu peyarchi is a changing sign for a horoscope.</span>
-            <span class="block tamil-text text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#7C2D12] mt-2">
-              உங்க ஜாதகத்துக்கு இந்த ராகு கேது பயிற்சி எப்படி இருக்குன்னு தெரிஞ்சுக்கணுமா?
-            </span>
-          </h2>
-          <p class="text-sm sm:text-base lg:text-lg text-[#4A2004] font-medium max-w-3xl mx-auto leading-relaxed mb-6">
-            The same transit gives a different result to every birth chart. Get your personal Peyarchi reading and Gemstone guidance from Dr. Kalpana Srikaanth, with 32+ years of experience and 1 lakh+ clients guided.
-          </p>
-          <div class="pt-1">
-            <a 
-              href="https://rzp.io/rzp/Y6bhLqh" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="btn-highlighted-cta text-sm sm:text-base px-7 sm:px-10 py-3 sm:py-3.5 shadow-xl inline-flex items-center gap-2">
-              <span>Book Consultation Directly</span>
-              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
 
 
       <!-- ========================================================
@@ -641,55 +568,27 @@
           <!-- FAQ 1 -->
           <div class="faq-item">
             <button class="faq-button" onclick="toggleFaq(1)">
-              <span>Why is Rahu Ketu Peyarchi considered so powerful in Vedic Astrology?</span>
+              <span>Will Rahu Ketu Peyarchi affect everyone equally, or does it depend on my horoscope?</span>
               <span id="faq-icon-1" class="text-orange-600 text-xl font-bold transition-transform">+</span>
             </button>
-            <div id="faq-content-1" class="faq-content hidden">
-              Rahu and Ketu are known as Chhaya Grahas (Shadow Planets) that move in retrograde motion. They spend approximately 18 months in each zodiac sign. Their transit directly affects karmic debts, sudden career advancements, marriage opportunities, and mental peace. Knowing their transit position allows you to maximize auspicious opportunities and take protective remedies.
+            <div id="faq-content-1" class="faq-content hidden space-y-2.5">
+              <p>Rahu Ketu Peyarchi does not affect everyone in the same way.</p>
+              <p>Its influence may vary according to your individual horoscope.</p>
+              <p>A personalised horoscope analysis with Dr. Kalpana Srikaanth can help you understand the possible effects of this planetary transit on different aspects of your life, including career, marriage, finances and family. You can also understand suitable remedies based on your horoscope.</p>
             </div>
           </div>
 
           <!-- FAQ 2 -->
           <div class="faq-item">
             <button class="faq-button" onclick="toggleFaq(2)">
-              <span>How will the consultation with Dr. Kalpana Srikaanth take place?</span>
+              <span>Why is Rahu Ketu Peyarchi considered so powerful in Vedic Astrology?</span>
               <span id="faq-icon-2" class="text-orange-600 text-xl font-bold transition-transform">+</span>
             </button>
-            <div id="faq-content-2" class="faq-content hidden">
-              Consultations are conducted directly over Phone Call, WhatsApp Video Call, or in person at our Coimbatore office according to your preference. Once you book via our official gateway, our coordinator will reach out to confirm your scheduled appointment slot.
-            </div>
-          </div>
-
-          <!-- FAQ 3 -->
-          <div class="faq-item">
-            <button class="faq-button" onclick="toggleFaq(3)">
-              <span>What if I do not know my exact time of birth?</span>
-              <span id="faq-icon-3" class="text-orange-600 text-xl font-bold transition-transform">+</span>
-            </button>
-            <div id="faq-content-3" class="faq-content hidden">
-              If your exact birth time is approximate, Dr. Kalpana Srikaanth uses Prashna Shastra (horary astrology) and birth chart verification based on major life events to identify your accurate Lagna and transit impact.
-            </div>
-          </div>
-
-          <!-- FAQ 4 -->
-          <div class="faq-item">
-            <button class="faq-button" onclick="toggleFaq(4)">
-              <span>Which gemstones are recommended for Rahu and Ketu?</span>
-              <span id="faq-icon-4" class="text-orange-600 text-xl font-bold transition-transform">+</span>
-            </button>
-            <div id="faq-content-4" class="faq-content hidden">
-              Hessonite (Gomed) is the gemstone of Rahu, while Chrysoberyl (Cat's Eye / Vaidooryam) is the gemstone of Ketu. However, Vedic gemology requires careful analysis of your Lagna and house lords before wearing them. Dr. Kalpana Srikaanth determines whether these stones are auspicious for you or if an alternative balancing gem should be worn.
-            </div>
-          </div>
-
-          <!-- FAQ 5 -->
-          <div class="faq-item">
-            <button class="faq-button" onclick="toggleFaq(5)">
-              <span>Which temples should I visit for Rahu Ketu Pariharam?</span>
-              <span id="faq-icon-5" class="text-orange-600 text-xl font-bold transition-transform">+</span>
-            </button>
-            <div id="faq-content-5" class="faq-content hidden">
-              The primary sacred shrines in Tamil Nadu and South India are Thirunageswaram (Naganathar Temple for Lord Rahu) and Keezhaperumpallam (Naganatha Swamy Temple for Lord Ketu) near Kumbakonam, as well as Sri Kalahasti near Tirupati. During the consultation, you will receive specific sankalpam guidelines tailored to your Rasi.
+            <div id="faq-content-2" class="faq-content hidden space-y-2.5">
+              <p>In Vedic Astrology, Rahu and Ketu are considered shadow planets that play an important role in shaping various aspects of an individual's life. Their transit (Peyarchi) is considered significant because they move from one zodiac sign to another, potentially bringing changes, challenges and new opportunities.</p>
+              <p>Their influence may vary depending on an individual's birth horoscope. This transit can have an impact on areas such as career, marriage, finances, relationships and personal growth.</p>
+              <p>A detailed horoscope analysis with Dr. Kalpana Srikaanth can help you understand how this Rahu Ketu Peyarchi may influence your life and what suitable remedies you can consider.</p>
+              <p>Understand the planetary changes and prepare yourself with personalised astrological guidance.</p>
             </div>
           </div>
         </div>
@@ -725,18 +624,17 @@
         </p>
       </div>
 
-      <!-- Highlighted CTA Button directly redirecting to Razorpay Payment Gateway (Bigger & Clearer) -->
-      <a 
-        href="https://rzp.io/rzp/Y6bhLqh" 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      <!-- Highlighted CTA Button triggering Consultation Booking Modal -->
+      <button 
+        type="button" 
+        onclick="openBookingModal('Sticky Bottom Bar')"
         class="btn-highlighted-cta text-xs sm:text-base px-4 sm:px-9 py-2.5 sm:py-3.5 whitespace-nowrap shadow-2xl flex-shrink-0"
         id="sticky-book-btn">
         <span>Book Consultation</span>
         <svg class="w-3.5 h-3.5 sm:w-5 sm:h-5 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
         </svg>
-      </a>
+      </button>
     </div>
 
 
@@ -772,6 +670,142 @@
       </a>
 
     </div>
+
+  </div>
+
+  <!-- ========================================================
+       INTERACTIVE CONSULTATION BOOKING MODAL
+       ======================================================== -->
+  <div id="booking-modal" class="modal-overlay" onclick="handleModalBackdropClick(event)">
+    <div class="modal-box p-5 sm:p-7 relative" onclick="event.stopPropagation()">
+      
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between pb-4 border-b border-orange-200 mb-5">
+        <div class="pr-6">
+          <span class="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-orange-800 bg-orange-100 border border-orange-300 px-2.5 py-0.5 rounded-full mb-1.5">
+            Rahu Ketu Peyarchi 2026 Special
+          </span>
+          <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-[#2A1202] leading-tight">
+            Book Your Personal Consultation
+          </h3>
+          <p class="text-xs sm:text-sm text-[#5A2805] mt-1 font-medium">
+            Vedic Horoscope Reading + Lifetime Gemstone Guidance with Dr. Kalpana Srikaanth
+          </p>
+        </div>
+        <button 
+          type="button" 
+          onclick="closeBookingModal()" 
+          aria-label="Close modal"
+          class="text-gray-400 hover:text-gray-700 p-1.5 rounded-full hover:bg-orange-100 transition-colors flex-shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Consultation Form -->
+      <form id="consultation-form" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+        
+        <div>
+          <label for="form-name" class="block text-xs font-bold text-[#2A1202] mb-1">
+            Your Full Name <span class="text-red-600">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="form-name" 
+            name="fullName"
+            required 
+            placeholder="e.g. Karthikeyan S" 
+            class="w-full px-3.5 py-2.5 rounded-xl border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none text-sm bg-orange-50/30">
+        </div>
+
+        <div>
+          <label for="form-phone" class="block text-xs font-bold text-[#2A1202] mb-1">
+            WhatsApp / Contact Number <span class="text-red-600">*</span>
+          </label>
+          <input 
+            type="tel" 
+            id="form-phone" 
+            name="phone"
+            required 
+            placeholder="e.g. 98422 66555" 
+            class="w-full px-3.5 py-2.5 rounded-xl border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none text-sm bg-orange-50/30">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div>
+            <label for="form-dob" class="block text-xs font-bold text-[#2A1202] mb-1">
+              Date of Birth <span class="text-red-600">*</span>
+            </label>
+            <input 
+              type="date" 
+              id="form-dob" 
+              name="dob"
+              required 
+              class="w-full px-3.5 py-2.5 rounded-xl border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none text-sm bg-orange-50/30">
+          </div>
+
+          <div>
+            <label for="form-rasi" class="block text-xs font-bold text-[#2A1202] mb-1">
+              Janma Rasi (Moon Sign) <span class="text-stone-400 font-normal">(Optional)</span>
+            </label>
+            <select 
+              id="form-rasi" 
+              name="rasi"
+              class="w-full px-3.5 py-2.5 rounded-xl border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none text-sm bg-orange-50/30">
+              <option value="">Select your Rasi</option>
+              <option value="Mesham (Aries)">Mesham (மேஷம் - Aries)</option>
+              <option value="Rishabam (Taurus)">Rishabam (ரிஷபம் - Taurus)</option>
+              <option value="Mithunam (Gemini)">Mithunam (மிதுனம் - Gemini)</option>
+              <option value="Kadagam (Cancer)">Kadagam (கடகம் - Cancer)</option>
+              <option value="Simham (Leo)">Simham (சிம்மம் - Leo)</option>
+              <option value="Kanni (Virgo)">Kanni (கன்னி - Virgo)</option>
+              <option value="Thulaam (Libra)">Thulaam (துலாம் - Libra)</option>
+              <option value="Viruchigam (Scorpio)">Viruchigam (விருச்சிகம் - Scorpio)</option>
+              <option value="Dhanusu (Sagittarius)">Dhanusu (தனுசு - Sagittarius)</option>
+              <option value="Makaram (Capricorn)">Makaram (மகரம் - Capricorn)</option>
+              <option value="Kumbam (Aquarius)">Kumbam (கும்பம் - Aquarius)</option>
+              <option value="Meenam (Pisces)">Meenam (மீனம் - Pisces)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Highlight Box: Bonus Value Included -->
+        <div class="p-3.5 rounded-xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-300 flex items-start gap-3">
+          <span class="text-xl flex-shrink-0">💎</span>
+          <div class="text-xs text-[#3D1C06] leading-relaxed">
+            <span class="font-extrabold text-[#2A1202] block">Special Bonus Included for Life:</span>
+            Free Lifetime Gemstone guidance based on your birth Lagna & active Dasha.
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-2">
+          <button 
+            type="submit" 
+            id="submit-booking-btn"
+            class="btn-highlighted-cta w-full justify-center text-sm sm:text-base py-3 sm:py-3.5 shadow-xl">
+            <span>Confirm & Proceed to Payment</span>
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="flex items-center justify-center gap-3 pt-1 text-[11px] text-stone-500 font-medium">
+          <span class="inline-flex items-center gap-1">
+            <svg class="w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+            Official Razorpay Gateway
+          </span>
+          <span>•</span>
+          <span>256-bit Secure Checkout</span>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
 
   </div>
 
