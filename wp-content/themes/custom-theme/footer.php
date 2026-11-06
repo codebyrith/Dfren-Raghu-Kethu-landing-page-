@@ -39,7 +39,7 @@ if (!defined('ABSPATH')) {
       
       <!-- Red Floating Phone Call Button (Above WhatsApp) -->
       <a 
-        href="tel:+919842266555" 
+        href="tel:+918667515295" 
         class="floating-call-btn"
         title="<?php esc_attr_e('Direct Phone Call with Dr. Kalpana Srikaanth\'s Office', 'custom-antigravity-theme'); ?>"
         aria-label="<?php esc_attr_e('Direct Phone Call', 'custom-antigravity-theme'); ?>">
@@ -48,9 +48,9 @@ if (!defined('ABSPATH')) {
         </svg>
       </a>
 
-      <!-- Original Green WhatsApp Floating Button (9842266555) -->
+      <!-- Original Green WhatsApp Floating Button (86675 15295) -->
       <a 
-        href="https://wa.me/919842266555?text=Hello%20Dr.%20Kalpana%20Srikaanth%20team,%20I%20would%20like%20to%20book%20a%20consultation%20for%20Rahu%20Ketu%20Peyarchi." 
+        href="https://wa.me/918667515295?text=Hello%20Dr.%20Kalpana%20Srikaanth%20team,%20I%20would%20like%20to%20book%20a%20consultation%20for%20Rahu%20Ketu%20Peyarchi." 
         target="_blank" 
         rel="noopener noreferrer" 
         class="floating-whatsapp"
@@ -122,7 +122,7 @@ if (!defined('ABSPATH')) {
             id="form-phone" 
             name="phone"
             required 
-            placeholder="<?php esc_attr_e('e.g. 98422 66555', 'custom-antigravity-theme'); ?>" 
+            placeholder="<?php esc_attr_e('e.g. 86675 15295', 'custom-antigravity-theme'); ?>" 
             class="w-full px-3.5 py-2.5 rounded-xl border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none text-sm bg-orange-50/30">
         </div>
 

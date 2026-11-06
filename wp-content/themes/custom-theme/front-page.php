@@ -142,20 +142,6 @@ $theme_uri = get_template_directory_uri();
           </p>
         </div>
 
-        <!-- IMAGE placer -->
-        <div class="max-w-2xl mx-auto mb-8 sm:mb-10">
-          <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-amber-300/80 group bg-white">
-            <img 
-              src="<?php echo esc_url($theme_uri); ?>/assets/images/office_consultation_2.jpg" 
-              alt="<?php esc_attr_e('Dr. Kalpana Srikaanth personal Vedic astrology consultation', 'custom-antigravity-theme'); ?>" 
-              class="w-full h-64 sm:h-80 md:h-[400px] object-cover object-center group-hover:scale-105 transition-transform duration-500">
-            <div class="p-3.5 sm:p-4 bg-white/95 text-center border-t border-orange-200">
-              <p class="text-xs sm:text-sm font-bold text-[#2A1202]"><?php esc_html_e('Personalized Gemstone & Transit Analysis', 'custom-antigravity-theme'); ?></p>
-              <p class="text-[11px] sm:text-xs text-orange-700 font-medium"><?php esc_html_e('Over 32 years of authentic, compassionate counsel', 'custom-antigravity-theme'); ?></p>
-            </div>
-          </div>
-        </div>
-
         <!-- Benefits List -->
         <div class="space-y-4 max-w-3xl mx-auto">
           
@@ -189,13 +175,13 @@ $theme_uri = get_template_directory_uri();
             </div>
           </div>
 
-          <!-- Benefit 4 -->
+          <!-- Benefit 3 -->
           <div class="bg-white/95 backdrop-blur-sm rounded-2xl border border-orange-200/90 p-5 sm:p-6 shadow-md hover:shadow-lg transition-all">
             <div class="flex items-start gap-3.5 sm:gap-4">
-              <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-100 text-orange-800 flex items-center justify-center font-extrabold text-sm sm:text-base flex-shrink-0">04</span>
+              <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-100 text-orange-800 flex items-center justify-center font-extrabold text-sm sm:text-base flex-shrink-0">03</span>
               <div>
                 <h3 class="font-heading font-extrabold text-base sm:text-lg text-[#2A1202] mb-1.5">
-                  <?php esc_html_e('Benefit 4 — Receive Personalized Pariharam Guidance', 'custom-antigravity-theme'); ?>
+                  <?php esc_html_e('Benefit 3 — Receive Personalized Pariharam Guidance', 'custom-antigravity-theme'); ?>
                 </h3>
                 <p class="text-xs sm:text-sm text-[#4A2004] leading-relaxed">
                   <?php esc_html_e('Understand traditional prayers, temple visits, archana and other relevant spiritual practices that may be considered for your horoscope.', 'custom-antigravity-theme'); ?>
@@ -204,16 +190,16 @@ $theme_uri = get_template_directory_uri();
             </div>
           </div>
 
-          <!-- Benefit 5: Special Bonus -->
+          <!-- Benefit 4: Special Bonus -->
           <div class="bg-gradient-to-r from-amber-50 via-orange-50 to-amber-100/90 rounded-2xl border-2 border-amber-400 p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all relative overflow-hidden">
             <div class="flex items-start gap-3.5 sm:gap-4 relative z-10">
-              <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center font-extrabold text-base flex-shrink-0 shadow-sm">💎</span>
+              <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center font-extrabold text-sm sm:text-base flex-shrink-0 shadow-sm">04</span>
               <div>
                 <span class="inline-block bg-amber-500 text-white text-[10px] sm:text-[11px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full mb-1">
                   <?php esc_html_e('A Special Bonus for Your Lifetime!', 'custom-antigravity-theme'); ?>
                 </span>
                 <h3 class="font-heading font-extrabold text-base sm:text-lg text-[#2A1202] mb-1">
-                  <?php esc_html_e('Benefit 5: A Special Bonus for Your Lifetime!', 'custom-antigravity-theme'); ?>
+                  <?php esc_html_e('Benefit 4: A Special Bonus for Your Lifetime!', 'custom-antigravity-theme'); ?>
                 </h3>
                 <p class="font-heading font-bold text-sm sm:text-base text-orange-950 mb-1.5">
                   <?php esc_html_e('Get FREE Lifetime Gemstone Recommendation Guidance!', 'custom-antigravity-theme'); ?>
@@ -225,16 +211,16 @@ $theme_uri = get_template_directory_uri();
             </div>
           </div>
 
-          <!-- Benefit 6 -->
+          <!-- Benefit 5 -->
           <div class="bg-white/95 backdrop-blur-sm rounded-2xl border border-orange-200/90 p-5 sm:p-6 shadow-md hover:shadow-lg transition-all">
             <div class="flex items-start gap-3.5 sm:gap-4">
-              <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-100 text-orange-800 flex items-center justify-center font-extrabold text-sm sm:text-base flex-shrink-0">06</span>
+              <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-100 text-orange-800 flex items-center justify-center font-extrabold text-sm sm:text-base flex-shrink-0">05</span>
               <div>
                 <h3 class="font-heading font-extrabold text-base sm:text-lg text-[#2A1202] mb-1.5">
-                  <?php esc_html_e('Benefit 6 — Ask Your Questions Directly', 'custom-antigravity-theme'); ?>
+                  <?php esc_html_e('Benefit 5 — Ask Your Questions Directly', 'custom-antigravity-theme'); ?>
                 </h3>
                 <p class="text-xs sm:text-sm text-[#4A2004] leading-relaxed">
-                  <?php esc_html_e('Discuss your concerns with an experienced astrologer and receive explanations relevant to your own horoscope.', 'custom-antigravity-theme'); ?>
+                  <?php esc_html_e('Discuss your concerns with an experienced astrologer and receive explanations relevant to your own horoscope for this Rahu kethu peyarchi', 'custom-antigravity-theme'); ?>
                 </p>
               </div>
             </div>

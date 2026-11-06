@@ -93,7 +93,7 @@ get_header();
       <!-- Prominent WhatsApp CTA Button -->
       <div class="mb-6">
         <a 
-          href="https://wa.me/919842266555?text=Hi%20Dr.%20Kalpana%20Srikaanth,%20I%20have%20completed%20my%20booking%20consultation." 
+          href="https://wa.me/918667515295?text=Hi%20Dr.%20Kalpana%20Srikaanth,%20I%20have%20completed%20my%20booking%20consultation." 
           target="_blank" 
           rel="noopener noreferrer" 
           class="btn-whatsapp-cta w-full sm:w-auto text-base sm:text-lg inline-flex items-center justify-center gap-3 px-8 py-4 shadow-xl"
@@ -118,7 +118,7 @@ get_header();
     <div class="mt-8 text-center text-xs text-orange-950/90 font-medium max-w-lg mx-auto space-y-1">
       <p class="font-bold text-[#2A1202]"><?php esc_html_e('Dr. Kalpana Srikaanth • Panchrathna Gems & Astro Research Centre', 'custom-antigravity-theme'); ?></p>
       <p><?php esc_html_e('33, 7th Street, Tatabad, Coimbatore - 641012, Tamil Nadu, India', 'custom-antigravity-theme'); ?></p>
-      <p><?php esc_html_e('Direct Assistance:', 'custom-antigravity-theme'); ?> <a href="tel:+919842266555" class="underline font-bold">+91 98422 66555</a> / <a href="tel:+919894566555" class="underline font-bold">+91 98945 66555</a></p>
+      <p><?php esc_html_e('Direct Assistance:', 'custom-antigravity-theme'); ?> <a href="tel:+918667515295" class="underline font-bold">+91 86675 15295</a></p>
     </div>
 
   </div>

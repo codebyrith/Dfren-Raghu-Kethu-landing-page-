@@ -157,7 +157,7 @@
         }
         if (waBtn && d.name) {
           const msg = encodeURIComponent(`Hi Dr. Kalpana Srikaanth team, I am ${d.name} (${d.phone}). I have completed my Rahu Ketu Peyarchi consultation booking payment.`);
-          waBtn.href = `https://wa.me/919842266555?text=${msg}`;
+          waBtn.href = `https://wa.me/918667515295?text=${msg}`;
         }
       }
     } catch (e) {
